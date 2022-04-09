@@ -1,8 +1,10 @@
-import './FavCard.css';
+import './_FavCard.scss';
+import React, { useState } from 'react';
+
 
 const FavCard = () => {
   return (
-    <div className="App">
+    <div className="fav-card">
       
     </div>
   );
