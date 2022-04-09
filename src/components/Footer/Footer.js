@@ -1,11 +1,10 @@
-import './Footer.css';
+
+import React from 'react';
 
 const Footer = () => {
-  return (
-    <div className="App">
-      
-    </div>
+  return (  
+    <h2>Contact info goes here</h2>
   );
 }
-
+ 
 export default Footer;
