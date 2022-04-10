@@ -7,27 +7,26 @@ import BubbleBox from '../BubbleBox/BubbleBox';
 import Favorites from '../Favorites/Favorites';
 import { FavoriteContext, FavoriteContextProvider } from '../../contexts/FavoriteContext';
 import { fetchData } from '../../apiCalls';
+// import DataContext from '../../contexts/DataContext'
+import {DataContextProvider} from '../../contexts/DataContext'
 
 
 const App = () => {
 
-  const [data, setData] = useState([])
 
-  useEffect(() => {
-    fetchData()
-    .then(info => {
-      setData({ mainArtist: info.Similar.Info, relatedArtists: info.Similar.Results})
-    })
-  }, [])
+  
 
 
   return (
+
     <div className="App">
       <Header />
       {/* <FavoriteContextProvider>
         <Favorites />
       </FavoriteContextProvider> */}
+      <DataContextProvider>
       <BubbleBox />
+      </DataContextProvider>
       <Footer />
     </div>
   );
