@@ -1,0 +1,12 @@
+.bubble-box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    background-color: #ebe4e7;
+        .banner {
+            height: 24vh;
+            background-color: #dcc1ce;
+        }
+}
