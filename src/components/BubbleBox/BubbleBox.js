@@ -1,9 +1,10 @@
-import './BubbleBox.css';
+import './_BubbleBox.scss';
 
 const BubbleBox = () => {
   return (
-    <div className="App">
-      
+    <div className="bubble-box">
+      <section className='banner'>Banner</section>
+      Bubble Box!
     </div>
   );
 }

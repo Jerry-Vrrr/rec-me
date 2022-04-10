@@ -3,6 +3,7 @@ import '../App/_App.scss';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import BubbleBox from '../BubbleBox/BubbleBox';
 import Favorites from '../Favorites/Favorites';
 import { FavoriteContext, FavoriteContextProvider } from '../../contexts/FavoriteContext';
 import { fetchData } from '../../apiCalls';
@@ -23,9 +24,10 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <FavoriteContextProvider>
+      {/* <FavoriteContextProvider>
         <Favorites />
-      </FavoriteContextProvider>
+      </FavoriteContextProvider> */}
+      <BubbleBox />
       <Footer />
     </div>
   );

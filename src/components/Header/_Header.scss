@@ -1,0 +1,41 @@
+.header {
+    background-color: #98d6df;
+    width: 100vw;
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-between;
+    h1 {
+     margin-left: .2em;   
+     font-size: 3em;
+    }
+    .search-bar {
+        height: 2em;
+        align-self: flex-end;
+          .select {
+              background-color: #b3dee2;
+              height: 2em;
+              width: 6emem;
+          }
+          .search {
+              background-color: #b3dee2;
+              height: 1.75em;
+          }
+        .submit {
+            background-color: #b3dee2;
+            margin-right: 1em;
+            height: 2em;
+            width: 3em;
+            align-self: flex-end;  
+        }  
+    }
+    .favorites {
+        background-color: #b3dee2;
+        margin-right: .2em;
+        height: 2em;
+        width: 6em;
+        align-self: flex-end;
+    }
+    
+}
