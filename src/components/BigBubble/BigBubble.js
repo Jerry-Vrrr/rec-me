@@ -1,10 +1,10 @@
-import './BigBubble.css';
+import './_BigBubble.scss';
 
 const BigBubble = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <article className="big-bubs">
+      burbuja grande
+    </article>
   );
 }
 
