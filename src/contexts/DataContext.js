@@ -13,7 +13,7 @@ import { fetchData } from '../apiCalls'
  const DataContext = createContext();
 
  const DataContextProvider = ({ children }) => {
-     const [data, setData] = useState([])
+     const [data, setData] = useState(null)
      useEffect(() => {
      fetchData()
     .then(info => {
@@ -22,7 +22,7 @@ import { fetchData } from '../apiCalls'
   }, [])
    
      return (
-          <DataContext.Provider value={{data}}>{children}</DataContext.Provider>
+          <DataContext.Provider value={{data}}>{data && children}</DataContext.Provider>
      )
 }
 
