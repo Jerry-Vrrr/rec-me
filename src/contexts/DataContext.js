@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect, useAsync } from "react";
 import { fetchData } from "../apiCalls";
 
-const initialItems = ["red hot chili peppers", "nirvana", "the beatles"]
+const initialItems = ["red hot chili peppers", "nirvana", "the beatles"];
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
 };
@@ -9,13 +9,13 @@ const getRandomIndex = (array) => {
 const DataContext = createContext();
 
 const DataContextProvider = ({ children }) => {
-
   const [data, setData] = useState(null);
-  const [searchQuery, setQuery] = useState(""); 
+  const [searchQuery, setQuery] = useState("");
+  /* onLoad query */
   useEffect(() => {
-    setQuery(initialItems[getRandomIndex(initialItems)])
-  }, [])
-  
+    setQuery(initialItems[getRandomIndex(initialItems)]);
+  }, []);
+  /*dynamic fetch query*/
   useEffect(() => {
     fetchData(searchQuery).then((info) => {
       setData({
@@ -26,7 +26,7 @@ const DataContextProvider = ({ children }) => {
   }, [searchQuery]);
 
   return (
-    <DataContext.Provider value={{ data }}>
+    <DataContext.Provider value={{ data, setQuery }}>
       {data && children}
     </DataContext.Provider>
   );
