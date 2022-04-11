@@ -27,9 +27,9 @@ const BubbleBox = () => {
           src="https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg"
         ></img>
       </section>
-      <BigBubble />
+      {data && <BigBubble />}
       <div className="baby-bubble-wrap">
-        {createBubbles()}
+        {data && createBubbles()}
       </div>
     </div>
   );
