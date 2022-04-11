@@ -9,7 +9,7 @@ const BigBubble = () => {
   return (
     <div className='bubble-wrap'>
       <article className="big-bubs">
-        <img className='image' src='https://www.rockaxis.com/img/newsList/2813934.jpg'></img>
+        <img className='image' src='https://studiosol-a.akamaihd.net/letras/500x500/fotos/a/7/6/b/a76b7ee31a54dde5c98a1cc4cc620e0b.jpg'></img>
       </article>
       <h2>{data && <p>{artist.Name}</p>}</h2>
     </div>
