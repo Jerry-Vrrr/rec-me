@@ -14,7 +14,7 @@ const DataContextProvider = ({ children }) => {
   const [searchQuery, setQuery] = useState(""); 
   useEffect(() => {
     setQuery(initialItems[getRandomIndex(initialItems)])
-  }, [searchQuery])
+  }, [])
   
   useEffect(() => {
     fetchData(searchQuery).then((info) => {
