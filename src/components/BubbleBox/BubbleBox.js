@@ -8,13 +8,11 @@ import { nanoid } from "nanoid";
 const BubbleBox = () => {
   const data = useContext(DataContext);
   console.log("this is data", data);
-  const mainItem = data.data.mainItem;
   const relatedItems = data.data.relatedItems;
   const createBubbles = () => {
-    return relatedItems.map((item) => {
-      let id = nanoid();
-      item.id = id;
-      return <SmallBubble item={item} key={item.id} setQuery={data.setQuery} />;
+    return relatedItems.map((item, index) => {
+      item.id = `bubble${index+=1}`;
+      return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} />;
     });
   };
 
