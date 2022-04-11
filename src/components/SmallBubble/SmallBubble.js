@@ -1,9 +1,10 @@
+import React from 'react'
+import './_SmallBubble.scss';
 
-import './SmallBubble.css';
-
-const SmallBubble = () => {
+const SmallBubble = ({item}) => {
   return (
-    <div className="App">
+    <div className="little-bubs" id={item.id}>
+      <p>{item.Name}</p>
       
     </div>
   );
