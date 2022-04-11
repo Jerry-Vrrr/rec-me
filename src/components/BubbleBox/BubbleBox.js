@@ -3,22 +3,20 @@ import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
-import { nanoid } from 'nanoid'
+import { nanoid } from "nanoid";
 
 const BubbleBox = () => {
   const data = useContext(DataContext);
+  console.log("this is data", data);
   const mainItem = data.data.mainItem;
   const relatedItems = data.data.relatedItems;
   const createBubbles = () => {
-    return relatedItems.map(item => {
-      let id = nanoid()
-      item.id = id
-      return <SmallBubble
-        item={item}
-        key={item.id}
-      />
-    })
-  } 
+    return relatedItems.map((item) => {
+      let id = nanoid();
+      item.id = id;
+      return <SmallBubble item={item} key={item.id} setQuery={data.setQuery} />;
+    });
+  };
 
   return (
     <div className="bubble-box">
@@ -29,9 +27,7 @@ const BubbleBox = () => {
         ></img>
       </section>
       {data && <BigBubble />}
-      <div className="baby-bubble-wrap">
-        {data && createBubbles()}
-      </div>
+      <div className="baby-bubble-wrap">{data && createBubbles()}</div>
     </div>
   );
 };
