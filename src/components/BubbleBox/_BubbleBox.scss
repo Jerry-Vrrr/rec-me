@@ -1,7 +1,7 @@
 .bubble-box {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     border-style: solid;
     border-color: black;
     background: linear-gradient(36deg, rgba(4,4,4,1) 22%, rgba(30,20,70,1) 50%, rgba(72,4,94,1) 81%, rgba(6,125,125,0.9836528361344538) 100%);
@@ -17,8 +17,130 @@
 }
 
 .baby-bubble-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    // display: grid;
+    // justify-items: center;
+    // grid-template-columns: repeat(4, 1fr);
+    // grid-gap: 20px;
     
 }
+
+#bubble1 {
+    position: absolute;
+    top: 38%;
+    left: 6%;  
+}
+
+#bubble2 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble3 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble4 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble5 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble6 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble7 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble8 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble9 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble10 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble11 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble12 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble13 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble14 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble15 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble16 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble17 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble18 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble19 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
+#bubble20 {
+    position: absolute;
+    top: 30%;
+    left: 30%;    
+}
+
