@@ -3,6 +3,7 @@ import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
+import { nanoid } from 'nanoid'
 
 const BubbleBox = () => {
   const data = useContext(DataContext);
@@ -10,11 +11,11 @@ const BubbleBox = () => {
   const relatedItems = data.data.relatedItems;
   const createBubbles = () => {
     return relatedItems.map(item => {
-      let id = Date.now()
+      let id = nanoid()
       item.id = id
-      item.key = id
       return <SmallBubble
         item={item}
+        key={item.id}
       />
     })
   } 
