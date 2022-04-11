@@ -4,7 +4,8 @@ import React from 'react';
 const Footer = () => {
   return (  
     <section className='footer'>
-      <h2>Contact info goes here</h2>
+      
+      <h4> About - Sources - Contact - Maddy - Katie - Eric - Jerry </h4>
 
     </section>
     

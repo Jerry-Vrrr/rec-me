@@ -10,10 +10,10 @@ const BubbleBox =  () => {
   // console.log(artist)
   return (
     <div className="bubble-box">
-      {data && <p>{artist.Name}</p>}
-      <section className='banner'>new banner</section>
-      {/* <p>{artist.Name}</p> */}
-      
+      <section className='banner'>
+        <img className='banner' src='https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg'></img>
+      </section>
+      {/* {data && <p>{artist.Name}</p>} */}
       <BigBubble /> 
     </div>
   );
