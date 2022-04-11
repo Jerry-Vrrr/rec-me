@@ -5,8 +5,9 @@ const DataContext = createContext();
 
 const DataContextProvider = ({ children }) => {
   const [data, setData] = useState(null);
+  const [searchQuery, setQuery] = useState(null); 
   useEffect(() => {
-    fetchData().then((info) => {
+    fetchData(searchQuery).then((info) => {
       setData({
         mainItem: info.Similar.Info[0],
         relatedItems: info.Similar.Results,
