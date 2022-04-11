@@ -4,9 +4,14 @@
     flex-direction: column;
     border-style: solid;
     border-color: black;
-    background-color: #ebe4e7;
+    background: linear-gradient(36deg, rgba(4,4,4,1) 22%, rgba(30,20,70,1) 50%, rgba(72,4,94,1) 81%, rgba(6,125,125,0.9836528361344538) 100%);
         .banner {
             height: 24vh;
-            background-color: #dcc1ce;
+            float: top;
+            width: 100vw;
+            object-fit: cover;
+            filter: brightness(85%)
+        
         }
+        
 }

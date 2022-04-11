@@ -1,5 +1,5 @@
 .header {
-    background-color: #98d6df;
+    background: linear-gradient(36deg, rgba(4,4,4,1) 22%, rgba(30,20,70,1) 50%, rgba(72,4,94,1) 81%, rgba(6,125,125,0.9836528361344538) 100%);
     width: 100vw;
     height: 6em;
     display: flex;
@@ -9,6 +9,7 @@
     h1 {
      margin-left: .2em;   
      font-size: 3em;
+     color: #95fcfc;
     }
     .search-bar {
         height: 2em;
