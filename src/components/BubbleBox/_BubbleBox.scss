@@ -1,146 +1,130 @@
 .bubble-box {
-    height: 100vh;
-    // display: flex;
-    // flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    background: linear-gradient(36deg, rgba(4,4,4,1) 22%, rgba(30,20,70,1) 50%, rgba(72,4,94,1) 81%, rgba(6,125,125,0.9836528361344538) 100%);
-        .banner {
-            height: 24vh;
-            float: top;
-            width: 100vw;
-            object-fit: cover;
-            filter: brightness(85%)
-        
-        }
-        
+  height: 80vh;
+  // display: flex;
+  // flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  background: linear-gradient(
+    36deg,
+    rgba(4, 4, 4, 1) 22%,
+    rgba(30, 20, 70, 1) 50%,
+    rgba(72, 4, 94, 1) 81%,
+    rgba(6, 125, 125, 0.9836528361344538) 100%
+  );
+  .banner {
+    height: 24vh;
+    float: top;
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(85%);
+  }
 }
 
 .baby-bubble-wrap {
-    // display: grid;
-    // justify-items: center;
-    // grid-template-columns: repeat(4, 1fr);
-    // grid-gap: 20px;
-    
+  // display: grid;
+  // justify-items: center;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-gap: 20px;
 }
 
 #bubble1 {
-    position: absolute;
-    top: 38%;
-    left: 6%;  
+  position: absolute;
+  top: 34%;
+  left: 31%;
 }
-
 #bubble2 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 37%;
+  left: 22%;
 }
-
 #bubble3 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 34%;
+  left: 12%;
 }
-
 #bubble4 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 44%;
+  left: 3%;
 }
-
 #bubble5 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 51%;
+  left: 30%;
 }
-
 #bubble6 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 53%;
+  left: 21%;
 }
-
 #bubble7 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 51%;
+  left: 12%;
 }
-
 #bubble8 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 68%;
+  left: 32%;
 }
-
 #bubble9 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 69%;
+  left: 22%;
 }
-
 #bubble10 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 68%;
+  left: 12%;
 }
 
 #bubble11 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 34%;
+  left: 61%;
 }
-
 #bubble12 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 37%;
+  left: 70%;
 }
-
 #bubble13 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 33%;
+  left: 79%;
 }
-
 #bubble14 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 42%;
+  left: 87%;
 }
-
 #bubble15 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 51%;
+  left: 62%;
 }
-
 #bubble16 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 53%;
+  left: 71%;
 }
-
 #bubble17 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 51%;
+  left: 80%;
 }
-
 #bubble18 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 68%;
+  left: 60%;
 }
-
 #bubble19 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 69%;
+  left: 69%;
 }
-
 #bubble20 {
-    position: absolute;
-    top: 30%;
-    left: 30%;    
+  position: absolute;
+  top: 68%;
+  left: 79%;
 }
-
