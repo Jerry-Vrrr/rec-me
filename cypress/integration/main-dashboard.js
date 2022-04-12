@@ -55,22 +55,27 @@ describe('Main page flow', () => {
         
     });
 
-    it('should display ', () => {
+    it('should display bubbles', () => {
         cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
         cy.visit('http://localhost:3000/')
+        .get('.big-bubs').find('img').should('be.visible')
+        .get('.bubble-wrap').find('p').should('be.visible')
+        .get('.little-bubs').get('#bubble20').find('p').should('be.visible')
         
     });
 
-    it('should display ', () => {
+    it('should have clickable bubbles ', () => {
         cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
         cy.visit('http://localhost:3000/')
-        
+        .get('.little-bubs').get('#bubble20')
+        .click()
+        .get('.bubble-wrap').find('p').should('be.visible')
     });
 
-    it('should display ', () => {
+    it('should display a footer', () => {
         cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
         cy.visit('http://localhost:3000/')
-        
+        .get('.footer')
     });
 
 
