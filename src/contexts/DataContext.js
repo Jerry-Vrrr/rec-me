@@ -1,20 +1,14 @@
-import React, { useState, createContext, useEffect, useAsync } from "react";
+import React, { useState, createContext, useEffect, useRef } from "react";
 import { fetchData } from "../apiCalls";
-
-const initialItems = ["red hot chili peppers", "nirvana", "the beatles"];
-const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length);
-};
 
 const DataContext = createContext();
 
 const DataContextProvider = ({ children }) => {
+
   const [data, setData] = useState(null);
   const [searchQuery, setQuery] = useState("");
   /* onLoad query */
-  useEffect(() => {
-    setQuery(initialItems[getRandomIndex(initialItems)]);
-  }, []);
+  
   /*dynamic fetch query*/
   useEffect(() => {
     fetchData(searchQuery).then((info) => {

@@ -1,14 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
-import { nanoid } from "nanoid";
+
+const initialItems = ["red hot chili peppers", "nirvana", "the beatles"];
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
 
 const BubbleBox = () => {
+
   const data = useContext(DataContext);
-  console.log("this is data", data);
   const relatedItems = data.data.relatedItems;
+
+  useEffect(() => {
+    data.setQuery(initialItems[getRandomIndex(initialItems)]);
+  }, []);
+
+
   const createBubbles = () => {
     return relatedItems.map((item, index) => {
       item.id = `bubble${index+=1}`;
@@ -24,7 +34,7 @@ const BubbleBox = () => {
           src="https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg"
         ></img>
       </section>
-      {data && <BigBubble />}
+      {data && <BigBubble setQuery={data.setQuery}/>}
       <div className="baby-bubble-wrap">{data && createBubbles()}</div>
     </div>
   );
