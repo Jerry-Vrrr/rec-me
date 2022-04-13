@@ -7,26 +7,39 @@ import BubbleBox from '../BubbleBox/BubbleBox';
 import Favorites from '../Favorites/Favorites';
 import { FavoriteContext, FavoriteContextProvider } from '../../contexts/FavoriteContext';
 import { fetchData } from '../../apiCalls';
-// import DataContext from '../../contexts/DataContext'
 import {DataContextProvider} from '../../contexts/DataContext'
+import SingleArtist from '../SingleArtist/SingleArtist';
 
 
 const App = () => {
-
-
-  
-
-
   return (
-
     <div className="App">
       <Header />
+      
       {/* <FavoriteContextProvider>
         <Favorites />
       </FavoriteContextProvider> */}
-      <DataContextProvider>
-      <BubbleBox />
+
+       <DataContextProvider>
+
+        <Route
+      exact path='/'
+      render={() => {
+        return (  
+          <BubbleBox />         
+        )
+      }} />
+
+        <Route 
+          exact path='/:Name'
+          render={({match}) => {
+          return (         
+            <SingleArtist name={match.params.Name} />         
+          )
+      }} />
+
       </DataContextProvider>
+
       <Footer />
     </div>
   );

@@ -6,10 +6,11 @@ import { Route, Link } from "react-router-dom";
 const BigBubble = () => {
   const data = useContext(DataContext);
   const mainItem = data.data.mainItem;
-  console.log(mainItem);
+  
   return (
     <Link to={`/${mainItem.Name}`}>
-      <div className="bubble-wrap">
+      <div className="bubble-wrap" onClick={() => {
+        data ?  data.setQuery(mainItem.Name) : console.log('nope')}}>
         <article className="big-bubs">
           <img
             className="image"
