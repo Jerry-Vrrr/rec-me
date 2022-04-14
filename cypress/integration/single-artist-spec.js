@@ -40,7 +40,19 @@ describe('Single Artist flow', () => {
       cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
       cy.visit('http://localhost:3000/The Beatles')
         .get('.single-artist-header').contains('The Beatles')
+        .get('.youtube-vid')
+        .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube-nocookie.com/embed/NCtzkaL2t_Y')
+        .get('article').contains("The Beatles were an English rock band")
   });
+
+  it('should display related artist names', () => {
+    cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
+    cy.visit('http://localhost:3000/The Beatles')
+      .get('.related-artists').contains('The Rolling Stones')
+      
+});
+
+
 
 
 
