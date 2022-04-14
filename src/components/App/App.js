@@ -14,13 +14,13 @@ import SingleArtist from '../SingleArtist/SingleArtist';
 const App = () => {
   return (
     <div className="App">
+      <DataContextProvider>
       <Header />
       
       {/* <FavoriteContextProvider>
         <Favorites />
       </FavoriteContextProvider> */}
 
-       <DataContextProvider>
 
         <Route
       exact path='/'
