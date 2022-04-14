@@ -77,12 +77,14 @@ describe('Main page flow', () => {
         .get('.footer')
     });
 
-    // it('should allow user to click on main artist and route to a new page', () => {
-    //     // cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-    //     cy.visit('http://localhost:3000/')
-    //       .get('.big-bubs').click()
-    //       .get('.video-list-container')
-    // });
+    it('should allow user to click on main artist and route to a new page', () => {
+        cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
+        cy.visit('http://localhost:3000/')
+          .get('.bubble-wrap')
+          cy.wait(2000)
+          .get('.big-bubs').click()
+          .get('iframe')
+    });
 
 
   });
