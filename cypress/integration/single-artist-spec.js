@@ -35,7 +35,6 @@ describe('Single Artist flow', () => {
       }
     });
     
-    
     it('should display a single artist information', () => {
       cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
       cy.visit('http://localhost:3000/The Beatles')
@@ -67,14 +66,11 @@ describe('Single Artist flow', () => {
         .get('.wiki-link').click()
     });
 
-
-
-
-
-
-
-
-
-
+    it('should allow user to return to the main dashboard', () => {
+      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
+      cy.visit('http://localhost:3000/The Beatles')
+        .get('.back-to-main').click()
+        .url().should('eq', 'http://localhost:3000/')
+    });
 
 })
