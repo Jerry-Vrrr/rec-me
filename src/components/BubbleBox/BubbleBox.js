@@ -4,12 +4,13 @@ import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
 
+
+const BubbleBox = () => {
+
 const initialItems = ["red hot chili peppers", "nirvana", "the beatles"];
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
 };
-
-const BubbleBox = () => {
 
   const data = useContext(DataContext);
   const relatedItems = data.data.relatedItems;
