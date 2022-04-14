@@ -33,7 +33,7 @@ const SingleArtist = ({name}) => {
   return (
     <section className="single-artist-page">
       {data && <div className='header-section'>
-        <h1>{name}</h1>
+        <h1 className="single-artist-header">{name}</h1>
         <Link to='/' style={{ textDecoration: 'none' }}>
           <button>&times;</button>
         </Link>
