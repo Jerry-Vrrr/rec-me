@@ -35,12 +35,12 @@ const SingleArtist = ({name}) => {
       {data && <div className='header-section'>
         <h1 className="single-artist-header">{name}</h1>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <button>&times;</button>
+          <button className='back-to-main'>&times;</button>
         </Link>
         </div> }
       <div className='video-list-container'>
         <div className='youtube-vid'>
-        <iframe width='100%' height='100%' src={mainItem.yUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen='allowfullscreen'></iframe>
+        <iframe width='100%' height='100%' src={`https://www.youtube.com/embed/${mainItem.yID}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen='allowfullscreen'></iframe>
         </div>
       <div className='related-artists'>
         {createSimilarList()}
