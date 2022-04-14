@@ -9,9 +9,9 @@ const BigBubble = () => {
   
   return (
     <Link to={`/${mainItem.Name}`}>
-      <div className="bubble-wrap" onClick={() => {
-        data ?  data.setQuery(mainItem.Name) : console.log('nope')}}>
-        <article className="big-bubs">
+      <div className="bubble-wrap">
+        <article className="big-bubs" onClick={() => {
+        data && data.setQuery(mainItem.Name)}}>
           <img
             className="image"
             src="https://studiosol-a.akamaihd.net/letras/500x500/fotos/a/7/6/b/a76b7ee31a54dde5c98a1cc4cc620e0b.jpg"
