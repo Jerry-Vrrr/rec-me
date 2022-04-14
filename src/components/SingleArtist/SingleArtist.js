@@ -50,7 +50,7 @@ const SingleArtist = ({name}) => {
       <article className='article'>{mainItem.wTeaser}</article>
       </div>
       <div className='wiki-art'>
-      <a href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>check them out on Wikipedia!</a>
+      <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>check them out on Wikipedia!</a>
       </div>
       
     </section>
