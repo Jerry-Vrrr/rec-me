@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import './_SearchBar.scss'
+import {DataContext} from '../../contexts/DataContext'
 
 
 const SearchBar = () => {
-
+     const data = useContext(DataContext)
      const [artistName, setArtistName] = useState('')
 
     const handleChange = (event) => {
@@ -12,9 +13,8 @@ const SearchBar = () => {
 
      const searchArtists = (event) => {
           event.preventDefault()
-          
-
-          
+          data.setQuery(artistName)
+          setArtistName('')
      }
 
      return(
