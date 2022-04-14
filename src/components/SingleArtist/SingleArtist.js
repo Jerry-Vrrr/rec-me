@@ -2,22 +2,29 @@ import './_SingleArtist.scss';
 import { DataContext } from "../../contexts/DataContext";
 import { useContext, useEffect } from 'react';
 import RelatedArtist from '../RelatedArtist/RelatedArtist'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 
 const SingleArtist = ({name}) => {
   const data = useContext(DataContext);
   const mainItem = data.data.mainItem;
   const relatedItems = data.data.relatedItems;
-
-  console.log(mainItem)
+  const history = useHistory();
 
   const createSimilarList = () => {
     return relatedItems.map((item, index) => {
       item.id = `blerb${index+=1}`;
-      return <RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} />;
+      return <Link to={`/${item.Name}`}><RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} /></Link>
     });
   };
+
+  useEffect(() => {  
+    history.listen((location) => {
+      const path = location.pathname;
+      data.setQuery(path.substring(1))
+    })  
+  }, [history])
+
 
   useEffect(() => {
     data.setQuery(name)
@@ -33,7 +40,7 @@ const SingleArtist = ({name}) => {
         </div> }
       <div className='video-list-container'>
         <div className='youtube-vid'>
-        <iframe width='100%' height='100%' src={mainItem.yUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen='allowfullscreen'></iframe>
+        <iframe width='100%' height='100%' src={mainItem.yUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen='allowfullscreen'></iframe>
         </div>
       <div className='related-artists'>
         {createSimilarList()}
