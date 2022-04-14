@@ -12,6 +12,7 @@ const DataContextProvider = ({ children }) => {
   /*dynamic fetch query*/
   useEffect(() => {
     fetchData(searchQuery).then((info) => {
+      console.log(data, 'fetch data')
       setData({
         mainItem: info.Similar.Info[0],
         relatedItems: info.Similar.Results,
