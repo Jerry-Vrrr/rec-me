@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import BubbleBox from '../BubbleBox/BubbleBox';
-import Favorites from '../Favorites/Favorites';
-import { FavoriteContext, FavoriteContextProvider } from '../../contexts/FavoriteContext';
+
+
 import { fetchData } from '../../apiCalls';
 import {DataContextProvider} from '../../contexts/DataContext'
 import SingleArtist from '../SingleArtist/SingleArtist';
@@ -16,12 +16,10 @@ const App = () => {
     <div className="App">
       <DataContextProvider>
       <Header />
-      
-      {/* <FavoriteContextProvider>
-        <Favorites />
-      </FavoriteContextProvider> */}
+     
 
 
+     
         <Route
       exact path='/'
       render={() => {

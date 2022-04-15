@@ -12,14 +12,18 @@ const SmallBubble = ({ item, setQuery }) => {
   }, [item.Name])
   
   return (
-    <div
+    <div className='bubble-wrap'>
+      <div
       className="little-bubs"
       id={item.id}
       onClick={() => setQuery(item.Name)}
     >
-      <p>{item.Name}</p>
-      <img src={image} />
+      <img className='image' src={image} />
+      <h4>{item.Name}</h4>
     </div>
+    
+    </div>
+    
   );
 };
 

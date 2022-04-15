@@ -19,7 +19,7 @@ const SearchBar = () => {
 
      return(
           <form onSubmit={event => searchArtists(event)}>
-               <input 
+               <input className='search-bar'
                type='text'
                placeholder='search artist name'
                name='artist-name'
@@ -27,7 +27,7 @@ const SearchBar = () => {
                required
                onChange={event => handleChange(event)}
                />
-               <button>Submit</button>
+               <button className='submit'>Submit</button>
           </form>
      )
      
