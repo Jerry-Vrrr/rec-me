@@ -3,11 +3,12 @@ import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
+import initialItems from '../../data'
 
 
 const BubbleBox = () => {
 
-const initialItems = ["red hot chili peppers", "nirvana", "the beatles"];
+ 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
 };
