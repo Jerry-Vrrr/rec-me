@@ -16,7 +16,7 @@ const BigBubble = () => {
   }, [mainItem.Name])
   
   return (
-    <Link to={`/${mainItem.Name}`}>
+    <Link to={`/artists/${mainItem.Name}`}>
       <div className="bubble-wrap">
         <article className="big-bubs" onClick={() => {
         data && data.setQuery(mainItem.Name)}}>
