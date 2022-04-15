@@ -14,14 +14,14 @@ const SingleArtist = ({name}) => {
   const createSimilarList = () => {
     return relatedItems.map((item, index) => {
       item.id = `blerb${index+=1}`;
-      return <Link to={`/${item.Name}`}><RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} /></Link>
+      return <Link to={`/artists/${item.Name}`}><RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} /></Link>
     });
   };
 
   useEffect(() => {  
     history.listen((location) => {
       const path = location.pathname;
-      data.setQuery(path.substring(1))
+      data.setQuery(path.substring(9))
     })  
   }, [history])
 
