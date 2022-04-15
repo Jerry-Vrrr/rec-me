@@ -13,7 +13,7 @@ const Header = () => {
       <div className='search-bar'>
       <SearchBar />
       </div>
-      <button className='favorites' placeholder='Favorites'>Favorites</button>
+      
     </section>
   );
 }

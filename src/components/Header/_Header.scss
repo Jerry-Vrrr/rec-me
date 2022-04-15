@@ -6,37 +6,13 @@
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-between;
+
     h1 {
-     margin-left: .2em;   
+     align-self: flex-end;
+     margin-left: .5em;   
      font-size: 3em;
      color: #95fcfc;
     }
-    .search-bar {
-        height: 2em;
-        align-self: flex-end;
-          .select {
-              background-color: #95fcfc;
-              height: 2em;
-              width: 6emem;
-          }
-          .search {
-              background-color: #95fcfc;
-              height: 1.75em;
-          }
-        .submit {
-            background-color: #95fcfc;
-            margin-right: 1em;
-            height: 2em;
-            width: 3em;
-            align-self: flex-end;  
-        }  
-    }
-    .favorites {
-        background-color: #b3dee2;
-        margin-right: .2em;
-        height: 2em;
-        width: 6em;
-        align-self: flex-end;
+
     }
     
-}
