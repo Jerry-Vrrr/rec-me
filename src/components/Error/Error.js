@@ -1,10 +1,15 @@
-import './Error.css';
+import './_Error.scss';
+import { Link } from 'react-router-dom';
+
 
 const Error = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <section className="error-container">
+      <h2>Whoops! Something went wrong.</h2>
+      <Link to="/">
+        <button>Back to Home</button>      
+      </Link>
+    </section>
   );
 }
 
