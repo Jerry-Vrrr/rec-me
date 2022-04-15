@@ -10,7 +10,7 @@ import { fetchData } from '../../apiCalls';
 import {DataContextProvider} from '../../contexts/DataContext'
 import SingleArtist from '../SingleArtist/SingleArtist';
 
-
+console.log(process.env.REACT_APP_TASTE_DIVE)
 const App = () => {
   return (
     <div className="App">
