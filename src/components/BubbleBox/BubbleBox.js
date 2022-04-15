@@ -4,6 +4,7 @@ import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
+import { fetchImages } from "../../apiCalls";
 
 
 const BubbleBox = () => {
@@ -22,10 +23,14 @@ const getRandomIndex = (array) => {
 
 
   const createBubbles = () => {
-    return relatedItems.map((item, index) => {
+    const result = relatedItems.map((item, index) => {
       item.id = `bubble${index+=1}`;
-      return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} />;
-    });
+      fetchImages(item.Name).then(imageInfo => {
+        <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} image={imageInfo.thumb_url}/>;
+});
+            })
+
+    return result
   };
 
   return (

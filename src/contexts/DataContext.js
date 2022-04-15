@@ -2,7 +2,6 @@ import React, { useState, createContext, useEffect, useRef } from "react";
 import { fetchData } from "../apiCalls";
 
 const DataContext = createContext();
-
 const DataContextProvider = ({ children }) => {
 
   const [data, setData] = useState(null);
@@ -19,6 +18,7 @@ const DataContextProvider = ({ children }) => {
     });
   }, [searchQuery]);
 
+  
   return (
     <DataContext.Provider value={{ data, setQuery }}>
       {data && children}

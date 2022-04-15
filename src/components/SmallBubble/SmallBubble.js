@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./_SmallBubble.scss";
 
 
-const SmallBubble = ({ item, setQuery }) => {
+const SmallBubble = ({ item, setQuery, image }) => {
   return (
     <div
       className="little-bubs"
@@ -10,6 +10,7 @@ const SmallBubble = ({ item, setQuery }) => {
       onClick={() => setQuery(item.Name)}
     >
       <p>{item.Name}</p>
+      <img src={image} />
     </div>
   );
 };
