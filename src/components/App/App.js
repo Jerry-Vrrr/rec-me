@@ -10,7 +10,6 @@ import { fetchData } from '../../apiCalls';
 import {DataContextProvider} from '../../contexts/DataContext'
 import SingleArtist from '../SingleArtist/SingleArtist';
 
-
 const App = () => {
   return (
     <div className="App">
