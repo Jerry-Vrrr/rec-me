@@ -25,11 +25,8 @@ const getRandomIndex = (array) => {
   const createBubbles = () => {
     const result = relatedItems.map((item, index) => {
       item.id = `bubble${index+=1}`;
-      fetchImages(item.Name).then(imageInfo => {
-        <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} image={imageInfo.thumb_url}/>;
-});
+      return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} />;
             })
-
     return result
   };
 
