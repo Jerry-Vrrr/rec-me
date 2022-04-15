@@ -8,3 +8,8 @@ export const fetchData = async (query) => {
   })
     .then(response => response.json())
 }
+
+export const fetchImages = async (name) => {
+  return fetch(`https://rest.bandsintown.com/artists/${name}/?app_id=9249d4efca2fc99c7b6258541ce41a4f`)
+    .then(response => response.json())
+}

@@ -1,11 +1,19 @@
 import "./_BigBubble.scss";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { Route, Link } from "react-router-dom";
+import { fetchImages } from "../../apiCalls";
 
 const BigBubble = () => {
   const data = useContext(DataContext);
   const mainItem = data.data.mainItem;
+
+  const [image, setImage] = useState(null)
+  useEffect(() => {
+    fetchImages(mainItem.Name).then(imageInfo => {
+        setImage(imageInfo.thumb_url)
+    });
+  }, [mainItem.Name])
   
   return (
     <Link to={`/${mainItem.Name}`}>
@@ -14,7 +22,7 @@ const BigBubble = () => {
         data && data.setQuery(mainItem.Name)}}>
           <img
             className="image"
-            src="https://studiosol-a.akamaihd.net/letras/500x500/fotos/a/7/6/b/a76b7ee31a54dde5c98a1cc4cc620e0b.jpg"
+            src={image}
           ></img>
         </article>
         <h2>{data && <p>{mainItem.Name}</p>}</h2>
