@@ -18,8 +18,10 @@ const SmallBubble = ({ item, setQuery }) => {
       id={item.id}
       onClick={() => setQuery(item.Name)}
     >
-      <img className='image' src={image} />
-      <h4>{item.Name}</h4>
+
+      <p>{item.Name}</p>
+      {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? <img src='https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512'/> : <img src={image}/>}
+
     </div>
     
     </div>
@@ -28,3 +30,6 @@ const SmallBubble = ({ item, setQuery }) => {
 };
 
 export default SmallBubble;
+
+//"https://photos.bandsintown.com/artistThumb.jpg"
+// undefined
