@@ -9,16 +9,16 @@ import initialItems from '../../data'
 const BubbleBox = () => {
 
  
-const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length);
-};
+// const getRandomIndex = (array) => {
+//   return Math.floor(Math.random() * array.length);
+// };
 
   const data = useContext(DataContext);
   const relatedItems = data.data.relatedItems;
 
-  useEffect(() => {
-    data.setQuery(initialItems[getRandomIndex(initialItems)]);
-  }, []);
+  // useEffect(() => {
+  //   data.setQuery(initialItems[getRandomIndex(initialItems)]);
+  // }, []);
 
 
   const createBubbles = () => {
