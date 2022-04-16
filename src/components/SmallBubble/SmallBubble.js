@@ -19,9 +19,9 @@ const SmallBubble = ({ item, setQuery }) => {
       onClick={() => setQuery(item.Name)}
     >
 
-      <p>{item.Name}</p>
-      {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? <img src='https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512'/> : <img src={image}/>}
-
+      
+      {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? <img className='image' src='https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512'/> : <img className='image' src={image}/>}
+      <h4>{item.Name}</h4>
     </div>
     
     </div>

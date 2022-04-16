@@ -42,7 +42,7 @@ const SingleArtist = ({name}) => {
         <div className='youtube-vid'>
         <iframe width='100%' height='100%' src={`https://www.youtube.com/embed/${mainItem.yID}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen='allowfullscreen'></iframe>
         </div>
-      <div className='related-artists'>
+      <div className='related-artists'> <label>Related Artists</label>
         {createSimilarList()}
       </div>
       </div>
@@ -50,7 +50,7 @@ const SingleArtist = ({name}) => {
       <article className='article'>{mainItem.wTeaser}</article>
       </div>
       <div className='wiki-art'>
-      <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>check them out on Wikipedia!</a>
+      <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>Read More About {mainItem.Name} HERE on Wikipedia!</a>
       </div>
       
     </section>
