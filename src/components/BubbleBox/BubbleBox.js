@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
+import {GameContext} from "../../contexts/GameContext"
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
 import GameBox from "../GameBox/GameBox"
