@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { Route, Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
+import Error from "../Error/Error";
 
 const BigBubble = () => {
   const data = useContext(DataContext);
@@ -12,7 +13,9 @@ const BigBubble = () => {
   useEffect(() => {
     fetchImages(mainItem.Name).then(imageInfo => {
         setImage(imageInfo.thumb_url)
-    });
+    }).catch((err) => {
+      <Error error={err.message}/>
+    })
   }, [mainItem.Name])
   
   return (
