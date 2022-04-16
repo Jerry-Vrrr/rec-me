@@ -18,15 +18,15 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
 };
 
-const didIWin = () => {
-  console.log(data.data.mainItem.Name)
+const didIWin = (artistName) => {
+  console.log(artistName)
   // console.log(gameInfo.turnCounter)
   // console.log("didIWinFire?")
   if (!gameInfo.gameIsActive) {
     console.log("gameisnotactive")
     return
   }
-   if (gameInfo.turnCounter > 1 && data.data.mainItem.Name !== gameInfo.goalArtist){
+   if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist){
     console.log("not yet")
     return gameInfo.setGameMessage("Nah, son")
   } 
@@ -34,7 +34,7 @@ const didIWin = () => {
     console.log("loser")
     gameInfo.setGameMessage("You're a loser baby!")
   }
-  if (gameInfo.turnCounter > 1 && data.data.mainItem.Name === gameInfo.goalArtist) {
+  if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
     console.log("winner")
     return gameInfo.setGameMessage("You did the thing!")
   } 
