@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
@@ -7,18 +7,20 @@ import initialItems from '../../data'
 
 
 const BubbleBox = () => {
-
  
-// const getRandomIndex = (array) => {
-//   return Math.floor(Math.random() * array.length);
-// };
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
 
   const data = useContext(DataContext);
   const relatedItems = data.data.relatedItems;
 
-  // useEffect(() => {
-  //   data.setQuery(initialItems[getRandomIndex(initialItems)]);
-  // }, []);
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    data.setQuery(initialItems[getRandomIndex(initialItems)]);
+  }, []);
+    // setIsLoading(false)
 
 
   const createBubbles = () => {
