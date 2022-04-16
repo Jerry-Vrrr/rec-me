@@ -20,7 +20,8 @@ const BigBubble = () => {
   
   return (
     <Link to={`/artists/${mainItem.Name}`}>
-      <div className="bubble-wrap">
+    <div>
+      {image && <div className="bubble-wrap scale-in-center">
         <article className="big-bubs" onClick={() => {
         data && data.setQuery(mainItem.Name)}}>
         {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? 
@@ -29,7 +30,9 @@ const BigBubble = () => {
         }
         </article>
         <h2>{data && <p>{mainItem.Name}</p>}</h2>
-      </div>
+      </div>}
+
+    </div>
     </Link>
   );
 };
