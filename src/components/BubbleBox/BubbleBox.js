@@ -38,7 +38,7 @@ const getRandomIndex = (array) => {
           src="https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg"
         ></img>
       </section>
-      {!relatedItems.length && <h2>No artist found! Check your spelling!</h2>}
+      {!relatedItems.length && <h2 className='search-error'>No artist found! Check your spelling!</h2>}
       {data && relatedItems.length ? <BigBubble setQuery={data.setQuery}/> : null}
       <div className="baby-bubble-wrap">{data && createBubbles()}</div>
 
