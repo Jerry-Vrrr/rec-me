@@ -7,7 +7,8 @@ const GameBox = () => {
   
 return (
   <div>
-    <button className="start-game-button" onClick={}>Let's play a game!</button>
+    {/* onClick handler on button to set GameActive */}
+    <button className="start-game-button" >Let's play a game!</button>
 
   </div>
 )
