@@ -17,13 +17,9 @@ const getRandomIndex = (array) => {
   const data = useContext(DataContext);
   const relatedItems = data.data.relatedItems;
 
-  const [isLoading, setIsLoading] = useState(true)
-
   useEffect(() => {
     data.setQuery(initialItems[getRandomIndex(initialItems)]);
   }, []);
-    // setIsLoading(false)
-
 
   const createBubbles = () => {
     return relatedItems.map((item, index) => {
@@ -37,8 +33,14 @@ const getRandomIndex = (array) => {
       <section className="banner">
         <GameBox />
       </section>
-      {data && <BigBubble setQuery={data.setQuery}/>}
-      <div className="baby-bubble-wrap">{data && createBubbles()}</div>
+      {!data.isLoading ? 
+        <React.Fragment>
+          {data && <BigBubble setQuery={data.setQuery}/>}
+          <div className="baby-bubble-wrap">{data && createBubbles()}</div>
+        </React.Fragment>
+        :
+        <h1 className='loading'>LOADING</h1>
+    }
     </div>
   );
 };
