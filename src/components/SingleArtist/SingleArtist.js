@@ -47,10 +47,15 @@ const SingleArtist = ({name}) => {
       </div>
       </div>
       <div className='article-box'>
-      <article className='article'>{mainItem.wTeaser}</article>
+        {!mainItem.wTeaser ?
+          <article className='article'>No info to display for this artist.</article> :
+          <article className='article'>{mainItem.wTeaser}</article>
+        }
       </div>
       <div className='wiki-art'>
-      <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>check them out on Wikipedia!</a>
+        {mainItem.wTeaser && 
+          <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>check them out on Wikipedia!</a>
+        }
       </div>
       
     </section>
