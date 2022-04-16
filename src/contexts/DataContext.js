@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect, useRef } from "react";
 import { fetchData } from "../apiCalls";
+import Error from "../components/Error/Error";
 
 const DataContext = createContext();
 const DataContextProvider = ({ children }) => {
@@ -15,7 +16,9 @@ const DataContextProvider = ({ children }) => {
         mainItem: info.Similar.Info[0],
         relatedItems: info.Similar.Results,
       });
-    });
+    }).catch((err) => {
+      <Error error={err.message}/>
+    })
   }, [searchQuery]);
 
   

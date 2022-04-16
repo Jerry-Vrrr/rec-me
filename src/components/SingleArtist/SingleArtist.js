@@ -14,14 +14,14 @@ const SingleArtist = ({name}) => {
   const createSimilarList = () => {
     return relatedItems.map((item, index) => {
       item.id = `blerb${index+=1}`;
-      return <Link to={`/${item.Name}`}><RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} /></Link>
+      return <Link to={`/artists/${item.Name}`}><RelatedArtist name={item.Name} id={item.id} key={index+=1} setQuery={data.setQuery} /></Link>
     });
   };
 
   useEffect(() => {  
     history.listen((location) => {
       const path = location.pathname;
-      data.setQuery(path.substring(1))
+      data.setQuery(path.substring(9))
     })  
   }, [history])
 
@@ -47,10 +47,15 @@ const SingleArtist = ({name}) => {
       </div>
       </div>
       <div className='article-box'>
-      <article className='article'>{mainItem.wTeaser}</article>
+        {!mainItem.wTeaser ?
+          <article className='article'>No info to display for this artist.</article> :
+          <article className='article'>{mainItem.wTeaser}</article>
+        }
       </div>
       <div className='wiki-art'>
-      <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>Read More About {mainItem.Name} HERE on Wikipedia!</a>
+        {mainItem.wTeaser && 
+          <a className='wiki-link' href={mainItem.wUrl} target='_blank' style={{ textDecoration: 'none' }}>Read More About {mainItem.Name} HERE on Wikipedia!</a>
+        }
       </div>
       
     </section>

@@ -4,8 +4,6 @@ import './_Header.scss'
 import SearchBar from '../SearchBar/SearchBar'
 
 
-
-
 const Header = () => {
   return (  
     <section className='header'>
