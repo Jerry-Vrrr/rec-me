@@ -1,12 +1,9 @@
+@import './components/variables.scss';
 @import './components/App/App.scss';
-@import '._/variables.scss';
-@import './components/Footer.scss';
-@import './components/BubbleBox.scss';
+@import './components/Footer/_Footer.scss';
+@import './components/BubbleBox/BubbleBox.scss';
 @import './components/error/error.scss';
-@import './components/FavButton.FavButton.scss';
-@import './components/FavCard/FavCard.scss';
-@import './components/Favorites/Favorites.scss';
-@import './components/RelatedArtists/RelatedArtist.js';
+@import './components/RelatedArtist/RelatedArtist.scss';
 @import './components/SingleArtist/Singleartist.scss';
 @import './components/SmallBubble/SmallBubble.scss';
 @import './components/BigBubble/BigBubble.scss';
