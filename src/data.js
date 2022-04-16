@@ -82,7 +82,7 @@ const initialItems = [
   "Kane Brown",
   "Lady Gaga",
   "Coldplay",
-  "AC/DC",
+  "ACDC",
   "Miley Cyrus",
   "Giveon",
   "Kid Cudi",
