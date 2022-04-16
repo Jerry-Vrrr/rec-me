@@ -2,9 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
+import {GameContext} from "../../contexts/GameContext"
 
-const SmallBubble = ({ item, setQuery }) => {
+const SmallBubble = ({ item, setQuery, didIWin }) => {
   const [image, setImage] = useState(null);
+  const gameInfo = useContext(GameContext)
+
+  const smallBubbleHandler = () => {
+    setQuery(item.Name)
+    didIWin(item.Name)
+    return gameInfo.gameIsActive ? gameInfo.setTurnCounter((prevCounter) => prevCounter -= 1) : null
+  }
+
   useEffect(() => {
     fetchImages(item.Name)
       .then((imageInfo) => {
@@ -21,7 +30,7 @@ const SmallBubble = ({ item, setQuery }) => {
         <div
           className="little-bubs scale-in-center"
           id={item.id}
-          onClick={() => setQuery(item.Name)}
+          onClick={() => smallBubbleHandler()}
         >
           {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
           !image ? (

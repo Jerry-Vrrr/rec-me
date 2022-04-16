@@ -1,0 +1,24 @@
+.loader-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100vw;
+}
+
+.vinyl {
+  align-self: center;
+  height: 10em;
+  width: 10em;
+  animation: rotate 3s linear infinite
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
