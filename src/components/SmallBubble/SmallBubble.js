@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
+import Error from "../Error/Error";
 
 
 const SmallBubble = ({ item, setQuery }) => {
@@ -8,7 +9,9 @@ const SmallBubble = ({ item, setQuery }) => {
   useEffect(() => {
     fetchImages(item.Name).then(imageInfo => {
         setImage(imageInfo.thumb_url)
-    });
+    }).catch((err) => {
+      <Error error={err.message}/>
+    })
   }, [item.Name])
   
   return (
