@@ -5,26 +5,26 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import BubbleBox from '../BubbleBox/BubbleBox';
 import { fetchData } from '../../apiCalls';
-import {DataContext} from '../../contexts/DataContext'
+import {DataContextProvider} from '../../contexts/DataContext'
 import SingleArtist from '../SingleArtist/SingleArtist';
 import Error from '../Error/Error';
-import initialItems from "../../data"
+// import initialItems from "../../data"
 
 
 const App = () => {
-  const data = useContext(DataContext);
+  // const data = useContext(DataContext);
 
-  const getRandomIndex = (array) => {
-    return Math.floor(Math.random() * array.length);
-  };
+  // const getRandomIndex = (array) => {
+  //   return Math.floor(Math.random() * array.length);
+  // };
   
-  useEffect(() => {
-    data.setQuery(initialItems[getRandomIndex(initialItems)]);
-  }, []);
+  // useEffect(() => {
+  //   data.setQuery(initialItems[getRandomIndex(initialItems)]);
+  // }, []);
 
   return (
     <div className="App">
-      {/* <DataContextProvider> */}
+      <DataContextProvider>
         <Header />
 
         <Switch>
@@ -46,7 +46,7 @@ const App = () => {
     
         </Switch>
      
-      {/* </DataContextProvider> */}
+      </DataContextProvider>
       <Footer />
     </div>
   );
