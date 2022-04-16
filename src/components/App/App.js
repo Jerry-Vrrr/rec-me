@@ -8,6 +8,7 @@ import { fetchData } from '../../apiCalls';
 import {DataContextProvider} from '../../contexts/DataContext'
 import SingleArtist from '../SingleArtist/SingleArtist';
 import Error from '../Error/Error';
+import { GameContextProvider } from '../../contexts/GameContext';
 // import initialItems from "../../data"
 
 
@@ -29,8 +30,10 @@ const App = () => {
 
         <Switch>
           <Route exact path='/' render={() => {
-            return (  
-              <BubbleBox />         
+            return (
+              <GameContextProvider>
+                <BubbleBox />         
+              </GameContextProvider>
             )
           }}/>
 

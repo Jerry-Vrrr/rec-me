@@ -6,6 +6,7 @@ import {GameContext} from "../../contexts/GameContext"
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
 import GameBox from "../GameBox/GameBox"
+import Loader from "../Loader/Loader"
 
 
 const BubbleBox = () => {
@@ -39,7 +40,7 @@ const getRandomIndex = (array) => {
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
         </React.Fragment>
         :
-        <h1 className='loading'>LOADING</h1>
+        <Loader />
     }
     </div>
   );
