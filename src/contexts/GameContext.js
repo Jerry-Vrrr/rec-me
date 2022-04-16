@@ -11,14 +11,20 @@ const GameContextProvider = ({ children }) => {
     return Math.floor(Math.random() * array.length);
   };
 
-  const [turnCounter, setTurnCounter] = useState(0)
+  const gameReset = () => {
+
+  }
+
+  const [turnCounter, setTurnCounter] = useState(6)
   
   const [goalArtist, setGoalArtist] = useState(initialItems[getRandomIndex(initialItems)])
 
-  const [gameIsActive, setGameIsActive] = useState(false)
+  const [gameIsActive, setGameIsActive] = useState(true)
+
+  const [gameMessage, setGameMessage] = useState("")
 
   return (
-    <GameContext.Provider value={{ setTurnCounter, goalArtist, gameIsActive }}>
+    <GameContext.Provider value={{ turnCounter, setTurnCounter, goalArtist, gameIsActive, gameReset, gameMessage, setGameMessage }}>
       {children}
     </GameContext.Provider>
   );
