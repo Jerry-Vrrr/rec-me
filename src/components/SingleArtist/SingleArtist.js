@@ -35,7 +35,7 @@ const SingleArtist = ({name}) => {
       {data && <div className='header-section'>
         <h1 className="single-artist-header">{name}</h1>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <button className='back-to-main'>&times;</button>
+          <button className='back-to-main'onClick={()=>data.setQuery(mainItem.Name)}>&times;</button>
         </Link>
         </div> }
       <div className='video-list-container'>

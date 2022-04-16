@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect, useRef } from "react";
+import React, { useState, createContext, useEffect  } from "react";
 import { fetchData } from "../apiCalls";
 import Error from "../components/Error/Error";
 

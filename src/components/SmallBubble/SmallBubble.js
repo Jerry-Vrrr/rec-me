@@ -3,32 +3,39 @@ import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
 
-
 const SmallBubble = ({ item, setQuery }) => {
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState(null);
   useEffect(() => {
-    fetchImages(item.Name).then(imageInfo => {
-        setImage(imageInfo.thumb_url)
-    }).catch((err) => {
-      <Error error={err.message}/>
-    })
-  }, [item.Name])
-  
-  return (
-    <div className='bubble-wrap'>
-      <div
-      className="little-bubs"
-      id={item.id}
-      onClick={() => setQuery(item.Name)}
-    >
+    fetchImages(item.Name)
+      .then((imageInfo) => {
+        setImage(imageInfo.thumb_url);
+      })
+      .catch((err) => {
+        <Error error={err.message} />;
+      });
+  }, [item.Name]);
 
-      
-      {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? <img className='image' src='https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512'/> : <img className='image' src={image}/>}
-      <h4>{item.Name}</h4>
+  return (
+    <div>
+      {image && (
+        <div
+          className="little-bubs scale-in-center"
+          id={item.id}
+          onClick={() => setQuery(item.Name)}
+        >
+          {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
+          !image ? (
+            <img
+              className="image"
+              src="https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512"
+            />
+          ) : (
+            <img className="image" src={image} />
+          )}
+          <h4>{item.Name}</h4>
+        </div>
+      )}
     </div>
-    
-    </div>
-    
   );
 };
 

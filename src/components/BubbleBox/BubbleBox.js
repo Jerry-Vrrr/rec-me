@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./_BubbleBox.scss";
 import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
+import {GameContext} from "../../contexts/GameContext"
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
-import { fetchImages } from "../../apiCalls";
+import GameBox from "../GameBox/GameBox"
 
 
 const BubbleBox = () => {
-
  
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -17,31 +17,28 @@ const getRandomIndex = (array) => {
   const data = useContext(DataContext);
   const relatedItems = data.data.relatedItems;
 
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
     data.setQuery(initialItems[getRandomIndex(initialItems)]);
   }, []);
+    // setIsLoading(false)
 
 
   const createBubbles = () => {
-    const result = relatedItems.map((item, index) => {
+    return relatedItems.map((item, index) => {
       item.id = `bubble${index+=1}`;
       return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} />;
-            })
-    return result
+    });
   };
 
   return (
     <div className="bubble-box">
       <section className="banner">
-        <img
-          className="banner"
-          src="https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg"
-        ></img>
+        <GameBox />
       </section>
-      {!relatedItems.length && <h2 className='search-error'>No artist found! Check your spelling!</h2>}
-      {data && relatedItems.length ? <BigBubble setQuery={data.setQuery}/> : null}
+      {data && <BigBubble setQuery={data.setQuery}/>}
       <div className="baby-bubble-wrap">{data && createBubbles()}</div>
-
     </div>
   );
 };
