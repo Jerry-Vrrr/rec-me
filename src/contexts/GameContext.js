@@ -15,12 +15,14 @@ const GameContextProvider = ({ children }) => {
   
   const [goalArtist, setGoalArtist] = useState(initialItems[getRandomIndex(initialItems)])
 
-  const [gameIsActive, setGameIsActive] = useState(true)
+  const [gameIsActive, setGameIsActive] = useState(false)
 
   return (
-    <GameContext.Provider value={{ setTurnCounter, goalArtist }}>
+    <GameContext.Provider value={{ setTurnCounter, goalArtist, gameIsActive }}>
       {children}
     </GameContext.Provider>
   );
 
 }
+
+export {GameContext, GameContextProvider}
