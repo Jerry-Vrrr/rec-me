@@ -4,6 +4,7 @@ import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
+import GameBox from "../GameBox/GameBox"
 
 
 const BubbleBox = () => {
@@ -33,10 +34,7 @@ const getRandomIndex = (array) => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        <img
-          className="banner"
-          src="https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg"
-        ></img>
+        <GameBox />
       </section>
       {data && <BigBubble setQuery={data.setQuery}/>}
       <div className="baby-bubble-wrap">{data && createBubbles()}</div>
