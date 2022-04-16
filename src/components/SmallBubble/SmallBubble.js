@@ -19,7 +19,7 @@ const SmallBubble = ({ item, setQuery }) => {
     <div>
       {image && (
         <div
-          className="little-bubs"
+          className="little-bubs scale-in-center"
           id={item.id}
           onClick={() => setQuery(item.Name)}
         >
