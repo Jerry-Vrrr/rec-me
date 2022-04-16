@@ -1,13 +1,13 @@
-import React {useState} from 'react'
+import React, {useContext} from 'react'
 import "./_GameBox.scss"
 
 
 const GameBox = () => {
-  const [turnCounter, setTurnCounter] = useState(0)
+  
   
 return (
   <div>
-    <button className="start-game-button">Let's play a game!</button>
+    <button className="start-game-button" onClick={}>Let's play a game!</button>
 
   </div>
 )
