@@ -7,16 +7,42 @@ import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
 import GameBox from "../GameBox/GameBox"
 import balls from './beach-balls.png'
+import Loader from "../Loader/Loader"
+
 
 
 const BubbleBox = () => {
+  const gameInfo = useContext(GameContext)
+  const data = useContext(DataContext);
+  const relatedItems = data.data.relatedItems;
  
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
 };
 
-  const data = useContext(DataContext);
-  const relatedItems = data.data.relatedItems;
+const didIWin = (artistName) => {
+  console.log(artistName)
+  // console.log(gameInfo.turnCounter)
+  // console.log("didIWinFire?")
+  if (!gameInfo.gameIsActive) {
+    console.log("gameisnotactive")
+    return
+  }
+   if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist){
+    console.log("not yet")
+    return gameInfo.setGameMessage("Nah, son")
+  } 
+  if (gameInfo.turnCounter === 1) {
+    console.log("loser")
+    gameInfo.setGameMessage("You're a loser baby!")
+  }
+  if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
+    console.log("winner")
+    return gameInfo.setGameMessage("You did the thing!")
+  } 
+}
+
+  
 
   useEffect(() => {
     data.setQuery(initialItems[getRandomIndex(initialItems)]);
@@ -25,7 +51,7 @@ const getRandomIndex = (array) => {
   const createBubbles = () => {
     return relatedItems.map((item, index) => {
       item.id = `bubble${index+=1}`;
-      return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} />;
+      return <SmallBubble item={item} key={index+=1} setQuery={data.setQuery} didIWin={didIWin} />;
     });
   };
 
@@ -41,7 +67,7 @@ const getRandomIndex = (array) => {
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
         </React.Fragment>
         :
-        <h1 className='loading'>LOADING</h1>
+        <Loader />
     }
     </div>
   );
