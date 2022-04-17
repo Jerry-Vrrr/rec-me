@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path='/' render={() => {
             return (
               <GameContextProvider>
-                <BubbleBox />         
+                <BubbleBox />      
               </GameContextProvider>
             )
           }}/>
@@ -48,6 +48,7 @@ const App = () => {
           </Route>
     
         </Switch>
+
      
       </DataContextProvider>
       <Footer />
