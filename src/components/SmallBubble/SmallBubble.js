@@ -3,10 +3,12 @@ import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
 import {GameContext} from "../../contexts/GameContext"
+import { DataContext } from "../../contexts/DataContext";
 
 const SmallBubble = ({ item, setQuery, didIWin }) => {
   const [image, setImage] = useState(null);
   const gameInfo = useContext(GameContext)
+  const data = useContext(DataContext)
 
   const smallBubbleHandler = () => {
     setQuery(item.Name)
@@ -19,9 +21,6 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
       .then((imageInfo) => {
         setImage(imageInfo.thumb_url);
       })
-      .catch((err) => {
-        <Error error={err.message} />;
-      });
   }, [item.Name]);
 
   return (

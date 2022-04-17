@@ -8,7 +8,7 @@ const Header = () => {
   return (  
     <section className='header'>
       <h1>RecMe</h1>
-      <div className='search-bar'>
+      <div className='search-bar-container'>
       <SearchBar />
       </div>
       

@@ -13,6 +13,7 @@ import {
 import GameBox from "../GameBox/GameBox"
 import balls from './beach-balls.png'
 import Loader from "../Loader/Loader"
+import Error from "../Error/Error";
 
 
 
@@ -26,28 +27,26 @@ const BubbleBox = () => {
   };
 
   const didIWin = (artistName) => {
-    console.log(artistName)
-    // console.log(gameInfo.turnCounter)
-    // console.log("didIWinFire?")
     if (!gameInfo.gameIsActive) {
-      console.log("gameisnotactive")
       return
     }
     if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
-      console.log("winner")
-      return gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
+      gameInfo.setTurnCounter(7)
+      gameInfo.setGameIsActive(false)
+      gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
+      return setTimeout(gameInfo.setGameMessage(''), 7000)
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
-      console.log("not yet")
       return gameInfo.setGameMessage(attemptResponses[getRandomIndex(attemptResponses)])
     }
     if (gameInfo.turnCounter === 1) {
-      console.log("loser")
+      gameInfo.setTurnCounter(7)
+      gameInfo.setGameIsActive(false)
       gameInfo.setGameMessage(loseResponses[getRandomIndex(loseResponses)])
+      return setTimeout(gameInfo.setGameMessage(''), 7000)
+
     }
   }
-
-
 
   useEffect(() => {
     data.setQuery(initialItems[getRandomIndex(initialItems)]);
@@ -59,7 +58,7 @@ const BubbleBox = () => {
       return <SmallBubble item={item} key={index += 1} setQuery={data.setQuery} didIWin={didIWin} />;
     });
   };
-
+  
   return (
     <div className="bubble-box">
       <section className="banner">
@@ -68,12 +67,14 @@ const BubbleBox = () => {
       </section>
       {!data.isLoading ?
         <React.Fragment>
-          {data && <BigBubble setQuery={data.setQuery} />}
+          {data && relatedItems.length ? <BigBubble setQuery={data.setQuery}/> : null}
+          {!relatedItems.length && <h2 className='search-error'>No artist found!</h2>}
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
         </React.Fragment>
         :
         <Loader />
       }
+
     </div>
   );
 };

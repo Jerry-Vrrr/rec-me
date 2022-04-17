@@ -23,7 +23,7 @@ const GameContextProvider = ({ children }) => {
   
   const [goalArtist, setGoalArtist] = useState(gameArtists[getRandomIndex(gameArtists)])
 
-  const [gameIsActive, setGameIsActive] = useState(true)
+  const [gameIsActive, setGameIsActive] = useState(false)
 
   const [gameMessage, setGameMessage] = useState('')
 
