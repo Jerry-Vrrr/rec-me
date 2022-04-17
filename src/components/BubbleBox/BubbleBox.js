@@ -33,17 +33,17 @@ const BubbleBox = () => {
       console.log("gameisnotactive")
       return
     }
+    if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
+      console.log("winner")
+      return gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
+    }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       console.log("not yet")
-      return gameInfo.setGameMessage(gameInfo.setAt)
+      return gameInfo.setGameMessage(attemptResponses[getRandomIndex(attemptResponses)])
     }
     if (gameInfo.turnCounter === 1) {
       console.log("loser")
-      gameInfo.setGameMessage("You're a loser baby!")
-    }
-    if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
-      console.log("winner")
-      return gameInfo.setGameMessage("You did the thing!")
+      gameInfo.setGameMessage(loseResponses[getRandomIndex(loseResponses)])
     }
   }
 
