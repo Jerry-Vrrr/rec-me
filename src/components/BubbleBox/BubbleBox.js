@@ -27,24 +27,24 @@ const BubbleBox = () => {
   };
 
   const didIWin = (artistName) => {
-    console.log(artistName)
-    // console.log(gameInfo.turnCounter)
-    // console.log("didIWinFire?")
     if (!gameInfo.gameIsActive) {
-      console.log("gameisnotactive")
       return
     }
     if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
-      console.log("winner")
-      return gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
+      gameInfo.setTurnCounter(7)
+      gameInfo.setGameIsActive(false)
+      gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
+      return setTimeout(gameInfo.setGameMessage(''), 7000)
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
-      console.log("not yet")
       return gameInfo.setGameMessage(attemptResponses[getRandomIndex(attemptResponses)])
     }
     if (gameInfo.turnCounter === 1) {
-      console.log("loser")
+      gameInfo.setTurnCounter(7)
+      gameInfo.setGameIsActive(false)
       gameInfo.setGameMessage(loseResponses[getRandomIndex(loseResponses)])
+      return setTimeout(gameInfo.setGameMessage(''), 7000)
+
     }
   }
 
@@ -62,7 +62,7 @@ const BubbleBox = () => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        <img  src={balls}></img>
+        {/* <img  src={balls}></img> */}
         <GameBox />
       </section>
       {!data.isLoading ?
