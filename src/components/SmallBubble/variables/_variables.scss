@@ -1,4 +1,14 @@
-
-
+.banana {
+    display: none;
+}
+$breakpoints: (
+  narrow: 360px,
+  small: 480px,
+  tablet: 650px,
+  medium: 720px,
+  large: 960px,
+  wide: 1200px,
+  wider: 1400px
+);
 
 $accessory: #95fcfc;

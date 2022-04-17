@@ -30,7 +30,6 @@
             // size-adjust: auto;
             overflow: hidden;
             filter: brightness(85%)
-
         }
         
 }
@@ -76,3 +75,31 @@
   opacity: 1;
 }
 }
+
+@media screen and (max-width: 1250px) {
+        .big-bubs {
+          height: 15em;
+          width: 15em;
+        }
+      }     
+
+      @media screen and (max-width: 1050px) {
+        .big-bubs {
+          height: 12em;
+          width: 12em;
+        }
+      }     
+
+      @media screen and (max-width: 850px) {
+        .big-bubs {
+          height: 10em;
+          width: 10em;
+        }
+      }    
+
+      @media screen and (max-width: 650px) {
+        .big-bubs {
+          height: 8em;
+          width: 8em;
+        }
+      }    
