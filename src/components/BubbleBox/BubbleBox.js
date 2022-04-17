@@ -63,7 +63,7 @@ const BubbleBox = () => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        {/* <img  src={balls}></img> */}
+        <img  src={balls}></img>
         <GameBox />
       </section>
       {!data.isLoading ?
