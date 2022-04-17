@@ -30,11 +30,13 @@ const DataContextProvider = ({ children }) => {
   return (
     <DataContext.Provider value={{ data, setQuery, isLoading, error }}>
       {data && children}
-      {!data && 
+      {!data && error ? 
         <React.Fragment>
           <Header />
           <Error />
-        </React.Fragment>}
+        </React.Fragment> : null
+      }
+      
     </DataContext.Provider>
   );
 };
