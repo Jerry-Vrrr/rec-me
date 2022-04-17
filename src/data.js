@@ -309,7 +309,41 @@ const gameArtists = [
   "Ed Sheeran",
 ]
 
-export {initialItems, gameArtists};
+const winResponses = [
+  "Too easy. I made it too easy. My bad.",
+  "There's no way, this game was rigged.",
+  "I think you just got lucky this time.",
+  "Huh, you're kinda good at this.",
+  "Not terrible at all.",
+  "Great shot kid, that was one in a million!",
+  "You are the champion, my friend",
+  "You're still standing, better than you ever did",
+  "You're simply the best, better than all the rest.",
+  "I feel good as hell!"
+]
+
+const loseResponses = [
+  "We can't win them all, can we?",
+  "Soy un perdador. I'm a loser baby...",
+  "You fought the law, and the law won",
+]
+
+const attemptResponses = [
+  "nah, son",
+  "You should probably give up.",
+  "You don't got this.",
+  "I am not confident in your abilities.",
+  "Huh, you're kinda not good at this.",
+  "They say quitting is for losers. Maybe it's time to take stock of your current situation.",
+  "I'm betting on you! And by that, I mean I'm betting you won't make it.",
+  "This is hard.",
+  "There's no way to connect these dots.",
+  "Don't give up, you still have friends",
+  "WHOA! Livin'on a prayer with this one!",
+  "You got to know when to hold 'em, know when to fold 'em",
+]
+
+export {initialItems, gameArtists, attemptResponses, winResponses, loseResponses};
 
 
 
