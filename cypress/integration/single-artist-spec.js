@@ -36,39 +36,39 @@ describe('Single Artist flow', () => {
     });
     
     it('should display a single artist information', () => {
-      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-      cy.visit('http://localhost:3000/The Beatles')
+      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+      cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.single-artist-header').contains('The Beatles')
         .get('.youtube-vid')
-        .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube-nocookie.com/embed/NCtzkaL2t_Y')
+        .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube.com/embed/NCtzkaL2t_Y')
         .get('article').contains("The Beatles were an English rock band")
     });
 
     it('should display related artist names', () => {
-      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-      cy.visit('http://localhost:3000/The Beatles')
+      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+      cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.related-artists').contains('The Rolling Stones')
     });
 
     it('should display related artist names and be able to click on them', () => {
-      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-      cy.visit('http://localhost:3000/The Beatles')
+      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+      cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.related-item').first().click()
         .get('.single-artist-header').contains('The Rolling Stones')
         .url().should("include", "The%20Rolling%20Stones")
-        .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube-nocookie.com/embed/YzjZEci-EiU')
+        .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube.com/embed/YzjZEci-EiU')
     });
 
     it('should display Wikipedia links and be able to click on them', () => {
-      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-      cy.visit('http://localhost:3000/The Beatles')
+      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+      cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.wiki-link').should('have.attr', 'href').should('include', 'http://en.wikipedia.org/wiki/The_Beatles')
         .get('.wiki-link').click()
     });
 
     it('should allow user to return to the main dashboard', () => {
-      cy.intercept('GET', 'https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=the+beatles', interceptData)
-      cy.visit('http://localhost:3000/The Beatles')
+      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+      cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.back-to-main').click()
         .url().should('eq', 'http://localhost:3000/')
     });
