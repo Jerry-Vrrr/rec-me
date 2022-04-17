@@ -1,4 +1,4 @@
-@import './components/variables.scss';
+@import './components/SmallBubble/variables/_variables.scss';
 @import './components/App/App.scss';
 @import './components/Footer/_Footer.scss';
 @import './components/BubbleBox/BubbleBox.scss';
@@ -7,5 +7,6 @@
 @import './components/SingleArtist/Singleartist.scss';
 @import './components/SmallBubble/SmallBubble.scss';
 @import './components/BigBubble/BigBubble.scss';
+@import './components/SmallBubble/variables/_mixins.scss';
 
 

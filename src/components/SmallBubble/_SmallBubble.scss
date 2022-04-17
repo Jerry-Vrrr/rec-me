@@ -74,9 +74,41 @@
 }
 
      
-      
+@media screen and (max-width: 1250px) {
+  .little-bubs {
+    margin: 1em;
+    margin-top: 3.5em;
+    height: 5em;
+    width: 5em;
+  }
+}      
   
+@media screen and (max-width: 1050px) {
+  .little-bubs {
+    margin: 1em;
+    margin-top: 3.5em;
+    height: 4em;
+    width: 4em;
+  }
+}
 
+@media screen and (max-width: 850px) {
+  .little-bubs {
+    margin: 1em;
+    margin-top: 3.5em;
+    height: 3.5em;
+    width: 3.5em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .little-bubs {
+    margin: 1em;
+    margin-top: 3.5em;
+    height: 3em;
+    width: 3em;
+  }
+}
   
   
     

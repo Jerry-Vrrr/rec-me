@@ -6,6 +6,7 @@ import {GameContext} from "../../contexts/GameContext"
 import SmallBubble from "../SmallBubble/SmallBubble";
 import initialItems from '../../data'
 import GameBox from "../GameBox/GameBox"
+import balls from './beach-balls.png'
 
 
 const BubbleBox = () => {
@@ -31,6 +32,7 @@ const getRandomIndex = (array) => {
   return (
     <div className="bubble-box">
       <section className="banner">
+        <img  src={balls}></img>
         <GameBox />
       </section>
       {!data.isLoading ? 

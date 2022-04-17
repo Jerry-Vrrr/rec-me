@@ -1,3 +1,6 @@
+
+
+
 .bubble-box {
   height: 86vh;
   // display: flex;
@@ -9,18 +12,26 @@
     rgba(4, 4, 4, 1) 22%,
     rgba(30, 20, 70, 1) 50%,
     rgba(72, 4, 94, 1) 81%,
-    rgba(6, 125, 125, 0.9836528361344538) 100%
-  );
+    rgba(6, 125, 125, 0.9836528361344538) 100%);
+
   .banner {
     color: white;
-    background-image: url(https://www.synometrix.com/wp-content/uploads/2020/05/Light-Up-Beach-Ball-4.jpg);
     background-repeat:no-repeat;
-    background-size: cover;
-    height: 25vh;
-    float: top;
+    height: 27vh;
     width: 100vw;
+    border-image-width: 100vh;
     object-fit: cover;
     filter: brightness(85%);
+    overflow: hidden;
+        
+      img {
+        // .banner {
+          height: 24vh;
+          // float: top;
+          width: 100vw;
+          object-fit: cover;
+          filter: brightness(85%)
+      }
   }
 }
 
