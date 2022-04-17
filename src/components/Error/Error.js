@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Error = ({error}) => {
   return (
     <section className="error-container">
+      {console.log('test')}
       <h2>Whoops! Something went wrong.</h2>
       {error && `Whoops! Something went wrong: ${error}`}
       <Link to="/">
