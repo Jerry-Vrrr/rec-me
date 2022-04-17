@@ -13,6 +13,7 @@ import {
 import GameBox from "../GameBox/GameBox"
 import balls from './beach-balls.png'
 import Loader from "../Loader/Loader"
+import Error from "../Error/Error";
 
 
 
@@ -47,8 +48,6 @@ const BubbleBox = () => {
     }
   }
 
-
-
   useEffect(() => {
     data.setQuery(initialItems[getRandomIndex(initialItems)]);
   }, []);
@@ -59,7 +58,7 @@ const BubbleBox = () => {
       return <SmallBubble item={item} key={index += 1} setQuery={data.setQuery} didIWin={didIWin} />;
     });
   };
-
+  
   return (
     <div className="bubble-box">
       <section className="banner">
@@ -75,6 +74,7 @@ const BubbleBox = () => {
         :
         <Loader />
       }
+
     </div>
   );
 };
