@@ -14,9 +14,6 @@ const GameBox = () => {
   const gameButton = () => {
     return gameInfo.gameIsActive ? 'End Game' : 'Start Game'
   }
-
-
-  const 
   
 return (
   <div>
