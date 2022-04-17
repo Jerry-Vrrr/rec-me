@@ -29,7 +29,7 @@ const BigBubble = () => {
         <img className="image" src={image}/>
         }
         </article>
-        <h2>{data && <p>{mainItem.Name}</p>}</h2>
+        <h2>{data && <p className='big-bub-name'>{mainItem.Name}</p>}</h2>
       </div>}
 
     </div>
