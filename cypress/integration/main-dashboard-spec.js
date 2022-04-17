@@ -60,7 +60,6 @@ describe('Main page flow', () => {
         .get('.big-bubs').find('img').should('be.visible')
         .get('.bubble-wrap').find('p').should('be.visible')
         .get('.little-bubs').get('#bubble5').find('h4').should('be.visible')
-        
     });
 
     it('should have clickable bubbles ', () => {
