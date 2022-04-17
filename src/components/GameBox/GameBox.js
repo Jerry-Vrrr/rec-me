@@ -7,12 +7,18 @@ import "./_GameBox.scss"
 const GameBox = () => {
   const gameInfo = useContext(GameContext)
 
-  
+  const startGame = () => {
+    gameInfo.setGameIsActive(prev => !prev)
+  }
+
+  const gameButton = () => {
+    return gameInfo.gameIsActive ? 'End Game' : 'Start Game'
+  }
   
 return (
   <div>
     {/* onClick handler on button to set GameActive */}
-    <button className="start-game-button" >Let's play a game!</button>
+    <button className="start-game-button" onClick={() => (startGame())}>{gameButton()}</button>
     <h2>{gameInfo.gameMessage}</h2>
 
 
