@@ -4,7 +4,7 @@ import BigBubble from "../BigBubble/BigBubble";
 import { DataContext } from "../../contexts/DataContext";
 import {GameContext} from "../../contexts/GameContext"
 import SmallBubble from "../SmallBubble/SmallBubble";
-import initialItems from '../../data'
+import {initialItems} from '../../data'
 import GameBox from "../GameBox/GameBox"
 import balls from './beach-balls.png'
 import Loader from "../Loader/Loader"
@@ -58,7 +58,7 @@ const didIWin = (artistName) => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        <img  src={balls}></img>
+        {/* <img  src={balls}></img> */}
         <GameBox />
       </section>
       {!data.isLoading ? 
