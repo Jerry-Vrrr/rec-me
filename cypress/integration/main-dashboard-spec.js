@@ -1,6 +1,6 @@
 describe('Main page flow', () => {
     
-        let interceptData, interceptPics;
+        let interceptData;
 
         beforeEach(() => {
 
@@ -53,24 +53,24 @@ describe('Main page flow', () => {
         .get('.banner').find('img').should('be.visible')
     });
 
-    it('should display bubbles', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
-        cy.visit('http://localhost:3000/')
-        cy.wait(5000)
-        .get('.big-bubs').find('img').should('be.visible')
-        .get('.bubble-wrap').find('p').should('be.visible')
-        .get('.little-bubs').get('#bubble5').find('h4').should('be.visible')
+    // it('should display bubbles', () => {
+    //     // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+    //     cy.visit('http://localhost:3000/')
+    //     cy.wait(5000)
+    //     .get('.big-bubs').find('img').should('be.visible')
+    //     .get('.bubble-wrap').find('p').should('be.visible')
+    //     .get('.little-bubs').get('#bubble5').find('h4').should('be.visible')
         
-    });
+    // });
 
-    it('should have clickable bubbles ', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
-        cy.visit('http://localhost:3000/')
-        cy.wait(5000)
-        .get('.little-bubs').get('#bubble5')
-        .click()
-        .get('.bubble-wrap').find('h2').should('be.visible')
-    });
+    // it('should have clickable bubbles ', () => {
+    //     // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+    //     cy.visit('http://localhost:3000/')
+    //     cy.wait(5000)
+    //     .get('.little-bubs').get('#bubble5')
+    //     .click()
+    //     .get('.bubble-wrap').find('h2').should('be.visible')
+    // });
 
     it('should display a footer', () => {
         cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
@@ -78,14 +78,25 @@ describe('Main page flow', () => {
         .get('.footer')
     });
 
-    it('should allow user to click on main artist and route to a new page', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
-        cy.visit('http://localhost:3000/')
-          .get('.bubble-wrap')
-          cy.wait(2000)
-          .get('.big-bubs').click()
-          .get('iframe')
-    });
+    // it('should allow user to click on main artist and route to a new page', () => {
+    //     // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
+    //     cy.visit('http://localhost:3000/')
+    //       .get('.bubble-wrap')
+    //       cy.wait(2000)
+    //       .get('.big-bubs').click()
+    //       .get('iframe')
+    // });
+
+
+    it("should display error message to user when server is down", () => {
+        cy.intercept("http://fe-cors-proxy.herokuapp.com", {
+          statusCode: 422,
+        }).as("422 error");
+        cy.visit("http://localhost:3000/")
+        .contains('Whoops! Something went wrong.')
+      });
+
+
 
 
   });
