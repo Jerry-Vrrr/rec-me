@@ -301,8 +301,15 @@ const initialItems = [
   "El Fantasma",
 ];
 
+const gameArtists = [
+  "Billie Eilish",
+  "Kanye West",
+  "Ariana Grande",
+  "Eminem",
+  "Ed Sheeran",
+]
 
-export default initialItems;
+export {initialItems, gameArtists};
 
 
 
