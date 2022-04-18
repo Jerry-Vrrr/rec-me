@@ -42,19 +42,13 @@ describe('Main page flow', () => {
     it('should display a header on main dashboard', () => {
         cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
-        .get('.header').contains('RecMe')
+        .get('.header').get('img').should('have.attr', 'src')
         .get('.search-bar').should('have.value', '')
-        .get('.submit').contains('Submit')
+        .get('.button-search').contains('Find Artist')
     });
 
-    it('should display banner', () => {
-        cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
-        cy.visit('http://localhost:3000/')
-        .get('.banner').find('img').should('be.visible')
-    });
 
     it('should display bubbles', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
         cy.wait(5000)
         .get('.big-bubs').find('img').should('be.visible')
@@ -63,7 +57,6 @@ describe('Main page flow', () => {
     });
 
     it('should have clickable bubbles ', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
         cy.wait(5000)
         .get('.little-bubs').get('#bubble5')
@@ -78,7 +71,6 @@ describe('Main page flow', () => {
     });
 
     it('should allow user to click on main artist and route to a new page', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
           .get('.bubble-wrap')
           cy.wait(2000)
@@ -86,24 +78,21 @@ describe('Main page flow', () => {
           .get('iframe')
     });
 
-
+ 
     it("should display error message to user when encountering 422 error", () => {
         cy.intercept("http://fe-cors-proxy.herokuapp.com", {
           statusCode: 422,
         }).as("422 error");
         cy.visit("http://localhost:3000/")
-        .contains('Whoops! Something went wrong.')
+        .contains(`Whoops! Looks like you Rec'D Me...`)
       });
 
+      
     it("should display error message to user when encountering 500 error", () => {
         cy.intercept("http://fe-cors-proxy.herokuapp.com", {
             statusCode: 500,
         }).as("500 error");
         cy.visit("http://localhost:3000/")
-        .contains('Whoops! Something went wrong.')
+        .contains(`Whoops! Looks like you Rec'D Me...`)
         });
-
-
-
-
   });
