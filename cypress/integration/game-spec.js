@@ -17,21 +17,25 @@ it('should let user start game and see messages throughout', () => {
   .get('.game-text').find('h2')
   .contains('Moves Left: 5')
 });
-
+ 
 it('should reset moves after 6 tries and button text should reset to original text', () => {
   cy.visit('http://localhost:3000/')
   cy.wait(1000)
   .get('.button-64')
   .click()
   .get('.little-bubs').get('#bubble5').click()
-  .get('.little-bubs').get('#bubble4').click()
+  cy.wait(2000)
+  .get('.little-bubs').get('#bubble2').click()
+  cy.wait(2000)
   .get('.little-bubs').get('#bubble1').click()
+  cy.wait(2000)
   .get('.little-bubs').get('#bubble7').click()
-  .get('.little-bubs').get('#bubble4').click()
+  cy.wait(2000)
+  .get('.little-bubs').get('#bubble5').click()
+  cy.wait(2000)
   .get('.little-bubs').get('#bubble2').click()
   .get('.button-64').contains(`Let's play a game!`)
-  .get('.game-text').find('h2')
-  .should('not.exist')
+
 })
 
 
