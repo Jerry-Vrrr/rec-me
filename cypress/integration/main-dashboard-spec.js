@@ -54,7 +54,6 @@ describe('Main page flow', () => {
     });
 
     it('should display bubbles', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
         cy.wait(5000)
         .get('.big-bubs').find('img').should('be.visible')
