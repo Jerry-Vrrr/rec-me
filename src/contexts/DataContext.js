@@ -26,13 +26,11 @@ const DataContextProvider = ({ children }) => {
       .finally(() => setIsLoading(false))
   }, [searchQuery]);
 
-  
   return (
     <DataContext.Provider value={{ data, setQuery, isLoading, error }}>
       {data && children}
       {!data && error ? 
         <React.Fragment>
-          <Header />
           <Error />
         </React.Fragment> : null
       }
