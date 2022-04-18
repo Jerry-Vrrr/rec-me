@@ -153,7 +153,6 @@ const initialItems = [
   "Brent Faiyaz",
   "Jordan Davis",
   "Paramore",
-  "JOJI",
   "Kali Uchis",
   "G-Eazy",
   "Frank Sinatra",
