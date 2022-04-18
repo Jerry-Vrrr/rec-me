@@ -283,7 +283,7 @@ const gameArtists = [
   "Slipknot",
   "Foo Fighters",
   "The Beach Boys",
-]
+];
 
 const winResponses = [
   "Too easy. I made it too easy. My bad.",
@@ -292,17 +292,16 @@ const winResponses = [
   "Huh, you're kinda good at this.",
   "Not terrible at all.",
   "Great shot kid, that was one in a million!",
-  "You are the champion, my friend",
-  "You're still standing, better than you ever did",
+  "You are the champion, my friend!",
   "You're simply the best, better than all the rest.",
-  "I feel good as hell!"
-]
+  "I feel good as hell!",
+];
 
 const loseResponses = [
   "We can't win them all, can we?",
   "Soy un perdador. I'm a loser baby...",
-  "You fought the law, and the law won",
-]
+  "I fought the law, and the law won!",
+];
 
 const attemptResponses = [
   "nah, son",
@@ -314,12 +313,14 @@ const attemptResponses = [
   "I'm betting on you! And by that, I mean I'm betting you won't make it.",
   "This is hard.",
   "There's no way to connect these dots.",
-  "Don't give up, you still have friends",
   "WHOA! Livin'on a prayer with this one!",
   "You got to know when to hold 'em, know when to fold 'em",
-]
+];
 
-export {initialItems, gameArtists, attemptResponses, winResponses, loseResponses};
-
-
-
+export {
+  initialItems,
+  gameArtists,
+  attemptResponses,
+  winResponses,
+  loseResponses,
+};
