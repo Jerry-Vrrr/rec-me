@@ -63,7 +63,6 @@ describe('Main page flow', () => {
     });
 
     it('should have clickable bubbles ', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
         cy.wait(5000)
         .get('.little-bubs').get('#bubble5')
@@ -78,14 +77,12 @@ describe('Main page flow', () => {
     });
 
     it('should allow user to click on main artist and route to a new page', () => {
-        // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
         cy.visit('http://localhost:3000/')
           .get('.bubble-wrap')
           cy.wait(2000)
           .get('.big-bubs').click()
           .get('iframe')
     });
-
 
     it("should display error message to user when encountering 422 error", () => {
         cy.intercept("http://fe-cors-proxy.herokuapp.com", {
@@ -102,8 +99,4 @@ describe('Main page flow', () => {
         cy.visit("http://localhost:3000/")
         .contains('Whoops! Something went wrong.')
         });
-
-
-
-
   });
