@@ -1,70 +1,91 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rec-Me
 
-## Available Scripts
+###screenshot here
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+Rec-Me is a music discovery app and game aimed at people who are sick of the same music every day. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+On page load, the user can view a collection of related artists with a featured artist in the center of the page -- clicking on a a related artist  will move that artist to the featured artis position and update the related artists around them. Clicking on the featured artist will route the user to that artist's details page and will include a bio, music video and list of related artists. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Use the search bar in the header to find an artist by name and discover new artists!
 
-### `npm test`
+Ready for a challenge? Click the play button on the home page to be assigned a random artist to reach in 6 or less clicks on related artists. Each selection will be greeted with a snarky comment from the music gods and a tally of how many turns you have left. Start the game and enjoy the adventure!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Our featured stretch technology for this project incorporated the React-context-api to manage and access global state across our application.
+We primaraly used this in managing our data from our API's and tracking our game. 
+## Motivation
+- Gain an understanding of global state management in React
+- Utilize acceptance and E2E testing of site and asynchronous JavaScript with Cypress
+- Create a multi-page application with React Router
 
-### `npm run build`
+## Technology Used
+- ![React Context](https://img.shields.io/badge/react_context-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
+This site is deployed on [insert location here] pages and can be found [here](coming soon!)
+Alternatively, the repo can be cloned to your local machine. run 'npm i' before running 'npm start'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
+the main page displaying a search bar and featuring artists in bubbles. The single artist page and the game.
+### Main Dashboard
 
-### `npm run eject`
+On page load the user will see a random featured artist and related artist bubbles. Users can also use the search bar to search for a specific artist. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![main_page](comming soon)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+  <summary>Under the Hood</summary>
+  artist data is fetch from the tastDive API while the artist images are fetched from the bands in town API. On search submit, a new fetch is triggered. 
+</details>
+</br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Single Artist Detail
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When a user clicks on the featured artist, on the main dashboard they are routed to a page with the information on that specific artist with a unique URL.
 
-## Learn More
+![single_Artist_View](comming soon)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+  <summary>Under the Hood</summary>
+  Single artist are retrieved using the fetch API and interpolating a artits name into the URL. The site's URL is also changed to reflect that individual artits's name via React Router. Users can bookmark this URL to return to later!
+</details>
+</br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Game feature
 
-### Code Splitting
+A user can start the game by pressing the 'lets play a game' button on the homepage. This switches the main page into game mode. Users are given a random artist to try 
+to reach in 6 moves or less. Users are told how many turns are left and given motivational messages to keep going!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Game_View](https://user-images.githubusercontent.com/92049763/161648886-ae3cb6ca-e3d1-4e2b-9e06-85cbfbd999b1.gif)
 
-### Analyzing the Bundle Size
+<details>
+  <summary>Under the Hood</summary>
+ Game state is tracked via the context API which allows users to see the turn count and whether they win or loose. We have a custom array with for goal artists that are most likely to 
+ be recognized. 
+</details>
+</br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Testing
 
-### Making a Progressive Web App
+Rec-Me is fully end-to-end tested with Cypress. URLs are tested and network requests are stubbed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Additions
+- favorite mechenism so users can favorite and save artists.
+- make playlists based on genre
 
-### Advanced Configuration
+## Credits
+Authors: [Maddie Law](https://github.com/maddielaw) [Eric Matlock](https://github.com/ermatlock) [Jerry Vohrer](https://github.com/Jerry-Vrrr) [Katie Ammon](https://github.com/kammon10)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Project spec -> [here](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-### Deployment
+[Turing School of Software and Design's GitHub](https://github.com/turingschool-examples)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
