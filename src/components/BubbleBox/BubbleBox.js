@@ -11,7 +11,7 @@ import {
   attemptResponses,
 } from '../../data'
 import GameBox from "../GameBox/GameBox"
-import balls from './beach-balls.png'
+import balls from '../../images/beach-balls.png'
 import Loader from "../Loader/Loader"
 import Error from "../Error/Error";
 
@@ -30,11 +30,11 @@ const BubbleBox = () => {
     if (!gameInfo.gameIsActive) {
       return
     }
-    if (gameInfo.turnCounter > 1 && artistName === gameInfo.goalArtist) {
+    if (gameInfo.turnCounter >= 1 && artistName === gameInfo.goalArtist) {
       gameInfo.setTurnCounter(7)
       gameInfo.setGameIsActive(false)
       gameInfo.setGameMessage(winResponses[getRandomIndex(winResponses)])
-      return setTimeout(gameInfo.setGameMessage(''), 7000)
+      return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       return gameInfo.setGameMessage(attemptResponses[getRandomIndex(attemptResponses)])
@@ -43,7 +43,7 @@ const BubbleBox = () => {
       gameInfo.setTurnCounter(7)
       gameInfo.setGameIsActive(false)
       gameInfo.setGameMessage(loseResponses[getRandomIndex(loseResponses)])
-      return setTimeout(gameInfo.setGameMessage(''), 7000)
+      return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
 
     }
   }
@@ -62,7 +62,7 @@ const BubbleBox = () => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        {/* <img  src={balls}></img> */}
+        
         <GameBox />
       </section>
       {!data.isLoading ?

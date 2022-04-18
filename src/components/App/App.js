@@ -26,17 +26,18 @@ const App = () => {
   return (
     <div className="App">
       <DataContextProvider>
+      <GameContextProvider>
         <Header />
 
         <Switch>
           <Route exact path='/' render={() => {
             return (
-              <GameContextProvider>
+              
                 <BubbleBox />      
-              </GameContextProvider>
+     
             )
           }}/>
-
+      
           <Route exact path='/artists/:Name' render={({match}) => {
             return (         
               <SingleArtist name={match.params.Name} />         
@@ -48,7 +49,7 @@ const App = () => {
           </Route>
     
         </Switch>
-
+        </GameContextProvider>
      
       </DataContextProvider>
       <Footer />

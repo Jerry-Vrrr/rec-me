@@ -1,6 +1,6 @@
 import React from "react";
 import "./_Loader.scss";
-import vinyl from "../../images/vinyl.png";
+import vinyl from "../../images/vinyl.svg";
 
 const Loader = () => {
   return (
