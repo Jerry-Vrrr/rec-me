@@ -44,7 +44,7 @@ describe('Main page flow', () => {
         cy.visit('http://localhost:3000/')
         .get('.header').contains('RecMe')
         .get('.search-bar').should('have.value', '')
-        .get('.submit').contains('Submit')
+        .get('.button-search').contains('Find Artist')
     });
 
     it('should display banner', () => {
