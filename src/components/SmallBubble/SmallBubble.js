@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
-import Error from "../Error/Error";
 import {GameContext} from "../../contexts/GameContext"
 import { DataContext } from "../../contexts/DataContext";
 
@@ -45,6 +44,3 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
 };
 
 export default SmallBubble;
-
-//"https://photos.bandsintown.com/artistThumb.jpg"
-// undefined

@@ -20,20 +20,16 @@
     position: relative;
     object-fit: cover;
     border-radius: 50%;
-    // size-adjust: auto;
     overflow: hidden;
     filter: brightness(85%);
   }
-  
 }
 
 .sm-name {
   position: absolute;
-  // top: 0rem;
-  // left: 0rem;
   color: white;
   background-color: rgba(176, 0, 94, 0.57);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding-inline: 5%;
 }
 
@@ -45,9 +41,9 @@
     width: 4em;
   }
   .sm-name {
-    font-size: smaller;    
+    font-size: smaller;
   }
-}     
+}
 
 @media screen and (max-width: 1050px) {
   .little-bubs {
@@ -66,7 +62,7 @@
     width: 3.5em;
   }
   .sm-name {
-    font-size: x-small;    
+    font-size: x-small;
   }
 }
 
