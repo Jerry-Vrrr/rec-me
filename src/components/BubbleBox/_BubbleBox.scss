@@ -3,7 +3,13 @@
   display: flex;
   align-items: center;
   height: 86vh;
-  background: linear-gradient(36deg, rgb(4, 4, 4) 22%, rgb(30, 20, 70) 50%, rgb(72, 4, 94) 81%, rgba(6, 125, 125, 0.9836528361) 100%);
+  background: linear-gradient(
+    36deg,
+    rgb(4, 4, 4) 22%,
+    rgb(30, 20, 70) 50%,
+    rgb(72, 4, 94) 81%,
+    rgba(6, 125, 125, 0.9836528361) 100%
+  );
   flex-direction: column;
 
   .banner {
@@ -17,15 +23,9 @@
     height: 25vh;
     width: 100%;
     background-size: cover;
-    // object-fit: cover;
-    filter: opacity(.9);
-    // overflow: hidden;
+    filter: opacity(0.9);
   }
 }
-
-// .loading {
-//   color: white;
-// }
 
 #bubble1 {
   position: absolute;
@@ -128,4 +128,3 @@
   top: 68%;
   left: 79%;
 }
-

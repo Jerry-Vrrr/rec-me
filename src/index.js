@@ -8,11 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <BrowserRouter>
-  {/* <DataContextProvider> */}
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  {/* </DataContextProvider> */}
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { GameContext } from "../../contexts/GameContext";
-import { DataContext } from "../../contexts/DataContext";
 import "./_GameBox.scss";
-import balls from "../../images/beach-balls.png";
-import {getRandom} from "../../utils"
+import { getRandom } from "../../utils";
 import { gameArtists } from "../../data";
 
 const GameBox = () => {
@@ -11,26 +9,39 @@ const GameBox = () => {
 
   const startGame = () => {
     gameInfo.setGameIsActive((prev) => !prev);
-    gameInfo.setGoalArtist(getRandom(gameArtists))
+    gameInfo.setGoalArtist(getRandom(gameArtists));
   };
 
   const gameButton = () => {
-    return gameInfo.gameIsActive ? "Back to the recs!" : "Let's play a game!";
+    return gameInfo.gameIsActive ? "Quit Game" : "Let's play a game!";
   };
 
+  const restartGame = () => {
+    gameInfo.setTurnCounter(6);
+    gameInfo.setGameMessage('')
+    gameInfo.setGameOver(false)
+    gameInfo.setGoalArtist(getRandom(gameArtists))
+  }
+
   return (
-    <div className={`game-display ${gameInfo.gameIsActive ? "dark fade-in" : ""}`}>
+    <div
+      className={`game-display ${gameInfo.gameIsActive ? "dark fade-in" : ""}`}
+    >
       <button className="button-64" onClick={() => startGame()}>
-      <span class="text">{gameButton()}</span>
-        
+        <span class="text">{gameButton()}</span>
       </button>
-      {gameInfo.gameIsActive && (
+
+      {gameInfo.gameOver && (<button className="button-64" id='restart-button' onClick={() => restartGame()}> 
+        <span class="text">New Game</span>
+      </button> )}
+
+      {gameInfo.gameIsActive && !gameInfo.gameOver && (
         <div className="game-text">
           <h1>Can you get to {gameInfo.goalArtist} in 6 or less moves?</h1>
           <h2>Moves Left: {gameInfo.turnCounter}</h2>
         </div>
       )}
-          <h2>{gameInfo.gameMessage}</h2>
+      <h2>{gameInfo.gameMessage}</h2>
     </div>
   );
 };

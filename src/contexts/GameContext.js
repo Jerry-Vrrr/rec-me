@@ -1,30 +1,19 @@
-import React, { useState, createContext, useEffect } from "react";
-import { fetchData } from "../apiCalls";
-import Error from "../components/Error/Error";
-import {
-  initialItems,
-  gameArtists,
-  attemptResponses,
-  winResponses,
-  loseResponses,
-} from "../data";
+import React, { useState, createContext } from "react";
+import { gameArtists } from "../data";
+import { getRandom } from "../utils";
 
 const GameContext = createContext();
 
 const GameContextProvider = ({ children }) => {
-  const getRandomIndex = (array) => {
-    return Math.floor(Math.random() * array.length);
-  };
-
   const [turnCounter, setTurnCounter] = useState(6);
 
-  const [goalArtist, setGoalArtist] = useState(
-    gameArtists[getRandomIndex(gameArtists)]
-  );
+  const [goalArtist, setGoalArtist] = useState(getRandom(gameArtists));
 
   const [gameIsActive, setGameIsActive] = useState(false);
 
   const [gameMessage, setGameMessage] = useState("");
+
+  const [gameOver, setGameOver] = useState(false)
 
   return (
     <GameContext.Provider
@@ -37,6 +26,8 @@ const GameContextProvider = ({ children }) => {
         gameMessage,
         setGameMessage,
         setGoalArtist,
+        gameOver, 
+        setGameOver,
       }}
     >
       {children}
