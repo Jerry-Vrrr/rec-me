@@ -15,13 +15,14 @@ const GameBox = () => {
   };
 
   const gameButton = () => {
-    return gameInfo.gameIsActive ? "End Game" : "Start Game";
+    return gameInfo.gameIsActive ? "Back to the recs!" : "Let's play a game!";
   };
 
   return (
     <div className={`game-display ${gameInfo.gameIsActive ? "dark fade-in" : ""}`}>
-      <button className="start-game-button" onClick={() => startGame()}>
-        {gameButton()}
+      <button className="button-64" onClick={() => startGame()}>
+      <span class="text">{gameButton()}</span>
+        
       </button>
       {gameInfo.gameIsActive && (
         <div className="game-text">

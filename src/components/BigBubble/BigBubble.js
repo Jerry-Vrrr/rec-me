@@ -1,7 +1,7 @@
 import "./_BigBubble.scss";
 import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../contexts/DataContext";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
 
@@ -20,12 +20,12 @@ const BigBubble = () => {
   
   return (
     <Link to={`/artists/${mainItem.Name}`}>
-    <div>
+    <div className="big-bub-container">
       {image && <div className="bubble-wrap scale-in-center">
         <article className="big-bubs" onClick={() => {
         data && data.setQuery(mainItem.Name)}}>
         {image === "https://photos.bandsintown.com/artistThumb.jpg" || !image ? 
-        <img className="image" src='https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512'/> : 
+        null : 
         <img className="image" src={image}/>
         }
         </article>

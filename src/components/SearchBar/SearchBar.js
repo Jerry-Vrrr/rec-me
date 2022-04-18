@@ -27,7 +27,7 @@ const SearchBar = () => {
                required
                onChange={event => handleChange(event)}
                />
-               <button className='submit'>Submit</button>
+               <button className='button-search'><span class="text">Find Artist</span></button>
           </form>
      )
      
