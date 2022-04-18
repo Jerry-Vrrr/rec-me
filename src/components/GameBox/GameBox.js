@@ -19,6 +19,7 @@ return (
   <div>
     {/* onClick handler on button to set GameActive */}
     <button className="start-game-button" onClick={() => (startGame())}>{gameButton()}</button>
+    {gameInfo.gameIsActive && <h1>Can you get to {gameInfo.goalArtist} in 6 or less moves?</h1>}
     <h2>{gameInfo.gameMessage}</h2>
 
 
