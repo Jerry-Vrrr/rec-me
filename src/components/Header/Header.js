@@ -3,6 +3,7 @@ import { Link, useLocation  } from 'react-router-dom';
 import './_Header.scss'
 import SearchBar from '../SearchBar/SearchBar'
 import { GameContext } from '../../contexts/GameContext';
+import logo from "../../images/recme-logo.svg"
 
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
   return (  
     <section className='header'>
       <Link to="/">
-       <h1>RecMe</h1>      
+       <img className="logo" src={logo} alt="RecMe stylized logo"/>      
       </Link>
       
       <div className='search-bar-container'>

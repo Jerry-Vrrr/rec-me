@@ -33,14 +33,11 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
         >
           {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
           !image ? (
-            <img
-              className="image"
-              src="https://ca.slack-edge.com/T029P2S9M-U0S2QJD42-62348d5b08d9-512"
-            />
+            null
           ) : (
             <img className="image" src={image} />
           )}
-          <h4>{item.Name}</h4>
+          <h4 className="sm-name">{item.Name}</h4>
         </div>
       )}
     </div>

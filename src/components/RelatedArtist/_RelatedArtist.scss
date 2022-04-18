@@ -1,14 +1,20 @@
-.related-blorb {
-    height: 1em;
-    border-style: solid;
-    margin: .5em;
-    border-color: rgba(113, 46, 161, 0.316);
-    border-radius: 15px;
-    cursor: pointer;
+.related-item {
+  /* height: 1em; */
+  border: 2px solid rgb(113 46 161 / 74%);
+  margin: .5rem;
+  /* border-color: rgb(113 46 161 / 74%); */
+  border-radius: .8rem;
+  cursor: pointer;
 }
 
+.related-blorb {
+  margin-left: 1rem;
+}
+
+
+
 a {
-    font-weight: 600;
-    text-decoration: none;
-    color: whitesmoke
+  font-weight: 600;
+  text-decoration: none;
+  color: whitesmoke;
 }
