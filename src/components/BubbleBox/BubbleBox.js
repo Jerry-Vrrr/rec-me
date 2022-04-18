@@ -11,7 +11,7 @@ import {
   attemptResponses,
 } from '../../data'
 import GameBox from "../GameBox/GameBox"
-import balls from '../../images/beach-balls.png'
+import balls from '../../images/beach-balls.jpg'
 import Loader from "../Loader/Loader"
 import Error from "../Error/Error";
 
