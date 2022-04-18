@@ -36,6 +36,7 @@ const GameContextProvider = ({ children }) => {
         setGameIsActive,
         gameMessage,
         setGameMessage,
+        setGoalArtist,
       }}
     >
       {children}

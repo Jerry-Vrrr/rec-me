@@ -3,12 +3,15 @@ import { GameContext } from "../../contexts/GameContext";
 import { DataContext } from "../../contexts/DataContext";
 import "./_GameBox.scss";
 import balls from "../../images/beach-balls.png";
+import {getRandom} from "../../utils"
+import { gameArtists } from "../../data";
 
 const GameBox = () => {
   const gameInfo = useContext(GameContext);
 
   const startGame = () => {
     gameInfo.setGameIsActive((prev) => !prev);
+    gameInfo.setGoalArtist(getRandom(gameArtists))
   };
 
   const gameButton = () => {
