@@ -24,18 +24,16 @@ const BubbleBox = () => {
       return;
     }
     if (gameInfo.turnCounter >= 1 && artistName === gameInfo.goalArtist) {
-      gameInfo.setTurnCounter(7);
-      // gameInfo.setGameOver(true)
       gameInfo.setGameMessage(getRandom(winResponses));
+      gameInfo.setGameOver(true)
       // return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       return gameInfo.setGameMessage(getRandom(attemptResponses));
     }
     if (gameInfo.turnCounter === 1) {
-      gameInfo.setTurnCounter(7);
-      // gameInfo.setGameOver(true)
       gameInfo.setGameMessage(getRandom(loseResponses));
+      gameInfo.setGameOver(true)
       // return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
     }
   };

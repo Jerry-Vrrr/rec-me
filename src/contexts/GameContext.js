@@ -13,7 +13,7 @@ const GameContextProvider = ({ children }) => {
 
   const [gameMessage, setGameMessage] = useState("");
 
-  // const [gameOver, setGameOver] = useState(false)
+  const [gameOver, setGameOver] = useState(false)
 
   return (
     <GameContext.Provider
@@ -26,6 +26,8 @@ const GameContextProvider = ({ children }) => {
         gameMessage,
         setGameMessage,
         setGoalArtist,
+        gameOver, 
+        setGameOver,
       }}
     >
       {children}

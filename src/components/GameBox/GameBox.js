@@ -13,14 +13,15 @@ const GameBox = () => {
   };
 
   const gameButton = () => {
-    return gameInfo.gameIsActive ? "Back to the recs!" : "Let's play a game!";
+    return gameInfo.gameIsActive ? "Quit Game" : "Let's play a game!";
   };
 
-  // const restartGame = () => {
-  //   // gameInfo.setGameMessage('')
-  //   gameInfo.setGoalArtist(getRandom(gameArtists))
-
-  // }
+  const restartGame = () => {
+    gameInfo.setTurnCounter(6);
+    gameInfo.setGameMessage('')
+    gameInfo.setGameOver(false)
+    gameInfo.setGoalArtist(getRandom(gameArtists))
+  }
 
   return (
     <div
@@ -30,11 +31,11 @@ const GameBox = () => {
         <span class="text">{gameButton()}</span>
       </button>
 
-      {/* <button className="button-64" id='restart-button' onClick={() => restartGame()}> */}
-      {/* <span class="text">Restart Game</span>
-      </button> */}
+      {gameInfo.gameOver && (<button className="button-64" id='restart-button' onClick={() => restartGame()}> 
+        <span class="text">New Game</span>
+      </button> )}
 
-      {gameInfo.gameIsActive && (
+      {gameInfo.gameIsActive && !gameInfo.gameOver && (
         <div className="game-text">
           <h1>Can you get to {gameInfo.goalArtist} in 6 or less moves?</h1>
           <h2>Moves Left: {gameInfo.turnCounter}</h2>
