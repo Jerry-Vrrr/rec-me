@@ -1,38 +1,46 @@
-import React, { useState, createContext, useEffect  } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { fetchData } from "../apiCalls";
 import Error from "../components/Error/Error";
-import {initialItems, gameArtists, attemptResponses, winResponses, loseResponses} from "../data";
+import {
+  initialItems,
+  gameArtists,
+  attemptResponses,
+  winResponses,
+  loseResponses,
+} from "../data";
 
 const GameContext = createContext();
 
 const GameContextProvider = ({ children }) => {
-
   const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
   };
 
-  const gameReset = () => {
+  const [turnCounter, setTurnCounter] = useState(6);
 
-  }
+  const [goalArtist, setGoalArtist] = useState(
+    gameArtists[getRandomIndex(gameArtists)]
+  );
 
-  // const [winResponses, setWinResponses] = useState(winResponses[getRandomIndex(winResponses)])
-  // const [loseResponses, setLoseResponses] = useState(loseResponses[getRandomIndex(loseResponses)])
-  // const [attemptResponses, setAttemptResponses] = useState(attemptResponses[getRandomIndex(attemptResponses)])
+  const [gameIsActive, setGameIsActive] = useState(false);
 
-  const [turnCounter, setTurnCounter] = useState(6)
-  
-  const [goalArtist, setGoalArtist] = useState(gameArtists[getRandomIndex(gameArtists)])
-
-  const [gameIsActive, setGameIsActive] = useState(false)
-
-  const [gameMessage, setGameMessage] = useState('')
+  const [gameMessage, setGameMessage] = useState("");
 
   return (
-    <GameContext.Provider value={{ turnCounter, setTurnCounter, goalArtist, gameIsActive, setGameIsActive , gameReset, gameMessage, setGameMessage }}>
+    <GameContext.Provider
+      value={{
+        turnCounter,
+        setTurnCounter,
+        goalArtist,
+        gameIsActive,
+        setGameIsActive,
+        gameMessage,
+        setGameMessage,
+      }}
+    >
       {children}
     </GameContext.Provider>
   );
+};
 
-}
-
-export {GameContext, GameContextProvider}
+export { GameContext, GameContextProvider };
