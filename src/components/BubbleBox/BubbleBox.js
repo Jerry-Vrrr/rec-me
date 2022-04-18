@@ -65,7 +65,7 @@ const BubbleBox = () => {
             <BigBubble setQuery={data.setQuery} />
           ) : null}
           {!relatedItems.length && (
-            <h2 className="search-error">No artist found!</h2>
+            <h2 className="search-error">No artist found! Please try again!</h2>
           )}
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
         </React.Fragment>
