@@ -26,7 +26,6 @@ const BubbleBox = () => {
     if (gameInfo.turnCounter >= 1 && artistName === gameInfo.goalArtist) {
       gameInfo.setGameMessage(getRandom(winResponses));
       gameInfo.setGameOver(true)
-      // return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       return gameInfo.setGameMessage(getRandom(attemptResponses));
@@ -34,7 +33,6 @@ const BubbleBox = () => {
     if (gameInfo.turnCounter === 1) {
       gameInfo.setGameMessage(getRandom(loseResponses));
       gameInfo.setGameOver(true)
-      // return setTimeout(() => {gameInfo.setGameMessage('')}, 3000);
     }
   };
 
