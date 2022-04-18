@@ -9,7 +9,7 @@ const GameBox = () => {
 
   const startGame = () => {
     gameInfo.setGameIsActive((prev) => !prev);
-    gameInfo.setGoalArtist(getRandom(gameArtists));
+    restartGame()
   };
 
   const gameButton = () => {

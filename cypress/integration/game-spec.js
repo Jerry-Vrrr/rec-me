@@ -34,7 +34,7 @@ it('should reset moves after 6 tries and button text should reset to original te
   .get('.little-bubs').get('#bubble5').click()
   cy.wait(2000)
   .get('.little-bubs').get('#bubble2').click()
-  .get('.button-64').contains(`Let's play a game!`)
+  .get('.button-64').contains(`Quit Game`)
 
 })
 
