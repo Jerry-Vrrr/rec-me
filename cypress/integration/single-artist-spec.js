@@ -36,7 +36,6 @@ describe('Single Artist flow', () => {
     });
     
     it('should display a single artist information', () => {
-      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
       cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.single-artist-header').contains('The Beatles')
         .get('.youtube-vid')
@@ -45,13 +44,11 @@ describe('Single Artist flow', () => {
     });
 
     it('should display related artist names', () => {
-      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
       cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.related-artists').contains('The Rolling Stones')
     });
 
     it('should display related artist names and be able to click on them', () => {
-      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
       cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.related-item').first().click()
         .get('.single-artist-header').contains('The Rolling Stones')
@@ -60,17 +57,14 @@ describe('Single Artist flow', () => {
     });
 
     it('should display Wikipedia links and be able to click on them', () => {
-      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
       cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.wiki-link').should('have.attr', 'href').should('include', 'http://en.wikipedia.org/wiki/The_Beatles')
         .get('.wiki-link').click()
     });
 
     it('should allow user to return to the main dashboard', () => {
-      // cy.intercept('GET', 'http://fe-cors-proxy.herokuapp.com', interceptData)
       cy.visit('http://localhost:3000/artists/The Beatles')
         .get('.back-to-main').click()
         .url().should('eq', 'http://localhost:3000/')
     });
-
 })
