@@ -4,6 +4,7 @@
   }
   * {
     margin: 0;
+    border: 1px solid red
   }
   html, body, {
     height: 100vh;
@@ -24,10 +25,5 @@
   }
   #root, #__next {
     isolation: isolate;
-  }
-
-  .App {
-    height: 100vh;
-    width: 100vw;
   }
   

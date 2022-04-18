@@ -1,10 +1,5 @@
-
-
-
 .bubble-box {
   height: 86vh;
-  // display: flex;
-  // flex-direction: column;
   border-style: solid;
   border-color: black;
   background: linear-gradient(
@@ -12,27 +7,22 @@
     rgba(4, 4, 4, 1) 22%,
     rgba(30, 20, 70, 1) 50%,
     rgba(72, 4, 94, 1) 81%,
-    rgba(6, 125, 125, 0.9836528361344538) 100%);
+    rgba(6, 125, 125, 0.9836528361344538) 100%
+  );
 
   .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     background: url(../../images/beach-balls.png);
-    background-repeat:no-repeat;
-    height: 27vh;
-    width: 100vw;
-    border-image-width: 100vh;
+    background-repeat: no-repeat;
+    height: 25vh;
+    // width: 100vw;
     background-size: cover;
-    object-fit: cover;
+    // object-fit: cover;
     filter: brightness(85%);
-    overflow: hidden;
-        
-      img {
-          height: 24vh;
-          // float: top;
-          width: 100vw;
-          object-fit: cover;
-          filter: brightness(85%)
-      }
+    // overflow: hidden;
   }
 }
 
@@ -143,8 +133,8 @@
 }
 
 .fade-in {
-	-webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 /* ----------------------------------------------
@@ -159,7 +149,7 @@
  * animation fade-in
  * ----------------------------------------
  */
- @-webkit-keyframes fade-in {
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -175,4 +165,3 @@
     opacity: 1;
   }
 }
-
