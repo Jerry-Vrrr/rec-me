@@ -11,7 +11,7 @@ import {
   attemptResponses,
 } from '../../data'
 import GameBox from "../GameBox/GameBox"
-import balls from './beach-balls.png'
+import balls from '../../images/beach-balls.png'
 import Loader from "../Loader/Loader"
 import Error from "../Error/Error";
 
@@ -62,7 +62,7 @@ const BubbleBox = () => {
   return (
     <div className="bubble-box">
       <section className="banner">
-        {/* <img  src={balls}></img> */}
+        
         <GameBox />
       </section>
       {!data.isLoading ?

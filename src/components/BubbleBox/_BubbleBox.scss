@@ -16,16 +16,17 @@
 
   .banner {
     color: white;
+    background: url(../../images/beach-balls.png);
     background-repeat:no-repeat;
     height: 27vh;
     width: 100vw;
     border-image-width: 100vh;
+    background-size: cover;
     object-fit: cover;
     filter: brightness(85%);
     overflow: hidden;
         
       img {
-        // .banner {
           height: 24vh;
           // float: top;
           width: 100vw;
