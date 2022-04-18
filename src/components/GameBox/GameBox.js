@@ -19,7 +19,7 @@ const GameBox = () => {
   };
 
   return (
-    <div className="game-display">
+    <div className={`game-display ${gameInfo.gameIsActive ? "dark fade-in" : ""}`}>
       <button className="start-game-button" onClick={() => startGame()}>
         {gameButton()}
       </button>
