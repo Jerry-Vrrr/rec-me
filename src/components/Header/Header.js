@@ -1,11 +1,12 @@
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation  } from 'react-router-dom';
 import './_Header.scss'
 import SearchBar from '../SearchBar/SearchBar'
 
 
 const Header = () => {
+  const location = useLocation()
+  
   return (  
     <section className='header'>
       <Link to="/">
@@ -13,7 +14,7 @@ const Header = () => {
       </Link>
       
       <div className='search-bar-container'>
-      <SearchBar />
+      {location.pathname === '/' && <SearchBar />}
       </div>
       
     </section>
