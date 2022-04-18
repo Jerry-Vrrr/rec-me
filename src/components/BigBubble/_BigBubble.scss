@@ -1,7 +1,15 @@
+.big-bub-container {
+  display: flex;
+  flex-direction: column;
+  height: 58vh;
+  justify-content: center;
+}
+
 .bubble-wrap {
+    // margin-top: 4em;
     display: flex;
     flex-direction: column;
-    // width: 19em;
+    width: fit-content;
         h2 {
             align-self: center;
             color: white;
@@ -9,10 +17,11 @@
 }
 
 .big-bubs {
+  background: url(../../images/default-thumb.jpg);
     // position: absolute;
     // top: 50%;
     // left: 50%;
-    margin-top: 4em;
+    
     display: flex;
     box-sizing: content-box;
     background-position: center 20%;
@@ -78,8 +87,8 @@
 
 @media screen and (max-width: 1250px) {
         .big-bubs {
-          height: 15em;
-          width: 15em;
+          height: 13em;
+          width: 13em;
         }
       }     
 

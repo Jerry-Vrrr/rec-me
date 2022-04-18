@@ -1,12 +1,10 @@
 .bubble-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
   height: 86vh;
-  background: linear-gradient(
-    36deg,
-    rgba(4, 4, 4, 1) 22%,
-    rgba(30, 20, 70, 1) 50%,
-    rgba(72, 4, 94, 1) 81%,
-    rgba(6, 125, 125, 0.9836528361344538) 100%
-  );
+  background: linear-gradient(36deg, rgb(4, 4, 4) 22%, rgb(30, 20, 70) 50%, rgb(72, 4, 94) 81%, rgba(6, 125, 125, 0.9836528361) 100%);
+  flex-direction: column;
 
   .banner {
     display: flex;
@@ -17,7 +15,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 25vh;
-    // width: 100vw;
+    width: 100%;
     background-size: cover;
     // object-fit: cover;
     filter: opacity(.9);
