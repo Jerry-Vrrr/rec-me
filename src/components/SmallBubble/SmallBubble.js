@@ -3,6 +3,7 @@ import "./_SmallBubble.scss";
 import { fetchImages } from "../../apiCalls";
 import {GameContext} from "../../contexts/GameContext"
 import { DataContext } from "../../contexts/DataContext";
+import defaultThumbnail from "../../images/default-thumb.jpg"
 
 const SmallBubble = ({ item, setQuery, didIWin }) => {
   const [image, setImage] = useState(null);
@@ -32,7 +33,7 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
         >
           {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
           !image ? (
-            null
+            <img className="image" src={defaultThumbnail} />
           ) : (
             <img className="image" src={image} />
           )}

@@ -17,8 +17,6 @@
 }
 
 .big-bubs {
-  background: url(../../images/default-thumb.jpg);
-  display: flex;
   box-sizing: content-box;
   background-position: center 20%;
   background-size: cover;
@@ -26,14 +24,16 @@
   border-style: double;
   border-width: 0.5pc;
   border-color: grey;
-  align-self: center;
   height: 18em;
   width: 18em;
+  position: relative;
   .image {
-    object-fit: cover;
-    border-radius: 50%;
-    overflow: hidden;
     filter: brightness(85%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: circle(50%);
+    object-fit: cover;
   }
 }
 

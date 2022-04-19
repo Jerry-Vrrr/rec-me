@@ -4,6 +4,7 @@ import { DataContext } from "../../contexts/DataContext";
 import { Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
+import defaultThumbnail from "../../images/default-thumb.jpg"
 
 const BigBubble = () => {
   const data = useContext(DataContext);
@@ -32,7 +33,7 @@ const BigBubble = () => {
               }}
             >
               {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-              !image ? null : (
+              !image ? <img className="image" src={defaultThumbnail} /> : (
                 <img className="image" src={image} />
               )}
             </article>
