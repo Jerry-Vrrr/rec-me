@@ -26,8 +26,25 @@
     filter: opacity(0.9);
   }
 }
+
 .search-error {
   color: white;
+}
+
+.dice-button {
+  background: url(../../images/dice.png) no-repeat;
+  cursor: pointer;
+  width: 5em;
+  height: 5em;
+  background-size: cover;
+  // border-style: double;
+  border-width: 0;
+  border-radius: 50%
+}
+.dice-button:hover {
+  -webkit-filter: brightness(110%);
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 #bubble1 {

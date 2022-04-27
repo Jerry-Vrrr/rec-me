@@ -64,6 +64,7 @@ const BubbleBox = () => {
           {data && relatedItems.length ? (
             <BigBubble setQuery={data.setQuery} />
           ) : null}
+          <button className="dice-button" onClick={()=> {data.setQuery(getRandom(initialItems))}}></button>
           {!relatedItems.length && (
             <h2 className="search-error">No artist found! Please try again!</h2>
           )}

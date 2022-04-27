@@ -43,7 +43,7 @@ const BigBubble = () => {
           </div>
         )}
         
-          <button className="dice-button" onClick={()=> {data.setQuery(getRandom(initialItems))}}></button>
+          
         
       </div>
     </Link>
