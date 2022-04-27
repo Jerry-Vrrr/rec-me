@@ -15,10 +15,11 @@
   display: flex;
   flex-direction: column;
   // width: fit-content;
-  h2 {
-    align-self: center;
-    color: white;
-  }
+}
+
+.big-bub-name {
+  align-self: center;
+  color: white;
 }
 
 .big-bubs {
