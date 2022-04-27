@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
 import defaultThumbnail from "../../images/default-thumb.jpg"
-import {getRandom} from "../../utils"
-import { initialItems } from "../../data";
  
 const BigBubble = () => {
   const data = useContext(DataContext);
@@ -35,8 +33,8 @@ const BigBubble = () => {
               }}
             >
               {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-              !image ? <img className="image" src={defaultThumbnail} /> : (
-                <img className="image" src={image} />
+              !image ? <img className="image" src={defaultThumbnail} alt={mainItem.Name} /> : (
+                <img className="image" src={image} alt={mainItem.Name} />
               )}
             </article>
             <h2>{data && <p className="big-bub-name">{mainItem.Name}</p>}</h2>
