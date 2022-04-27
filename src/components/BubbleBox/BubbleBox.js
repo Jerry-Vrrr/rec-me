@@ -25,14 +25,14 @@ const BubbleBox = () => {
     }
     if (gameInfo.turnCounter >= 1 && artistName === gameInfo.goalArtist) {
       gameInfo.setGameMessage(getRandom(winResponses));
-      gameInfo.setGameOver(true)
+      gameInfo.setGameOver(true);
     }
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       return gameInfo.setGameMessage(getRandom(attemptResponses));
     }
     if (gameInfo.turnCounter === 1) {
       gameInfo.setGameMessage(getRandom(loseResponses));
-      gameInfo.setGameOver(true)
+      gameInfo.setGameOver(true);
     }
   };
 
@@ -62,10 +62,17 @@ const BubbleBox = () => {
       {!data.isLoading ? (
         <React.Fragment>
           {data && relatedItems.length ? (
-            <BigBubble setQuery={data.setQuery} />
+            <>
+              <BigBubble setQuery={data.setQuery} />
+              <button
+                className="dice-button"
+                onClick={() => {
+                  data.setQuery(getRandom(initialItems));
+                }}
+              ></button>
+            </>
           ) : null}
-          <button className="dice-button" onClick={()=> {data.setQuery(getRandom(initialItems))}}></button>
-          {!relatedItems.length && (
+          {!relatedItems.length && !data && (
             <h2 className="search-error">No artist found! Please try again!</h2>
           )}
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
