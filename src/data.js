@@ -300,9 +300,9 @@ const winResponses = [
 ];
 
 const loseResponses = [
-  "You Lost. We can't win them all, can we?",
-  "You Lost. Soy un perdador. I'm a loser baby...",
-  "Yoy lost. You fought the law, and the law won.",
+  "You lost. We can't win them all, can we?",
+  "You lost. Soy un perdador. I'm a loser baby...",
+  "You lost. You fought the law, and the law won.",
   "You lost. All you can do is shake it off, shake it off."
 ];
 
