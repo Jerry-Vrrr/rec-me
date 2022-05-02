@@ -123,6 +123,7 @@ const initialItems = [
   "Summer Walker",
   "Notorious B.I.G.",
   "Metro Boomin",
+  "David Bowie",
   "Sam Smith",
   "Saweetie",
   "Nirvana",
@@ -155,7 +156,6 @@ const initialItems = [
   "Kali Uchis",
   "G-Eazy",
   "Frank Sinatra",
-  "Maluma",
   "Key Glock",
   "Lynyrd Skynyrd",
   "50 Cent",
@@ -166,7 +166,6 @@ const initialItems = [
   "City Girls",
   "Gorillaz",
   "The Chainsmokers",
-  "Natanael Cano",
   "Miguel",
   "Weezer",
   "Journey",
@@ -283,6 +282,23 @@ const gameArtists = [
   "Slipknot",
   "Foo Fighters",
   "The Beach Boys",
+  "Selena Gomez",
+  "Red Hot Chili Peppers",
+  "Madonna",
+  "David Bowie",
+  "Queen",
+  "Weezer",
+  "Prince",
+  "Backstreet Boys",
+  "Dua Lipa",
+  "Gorillaz",
+  "John Denver",
+  "Imagine Dragons",
+  "Fleetwood Mac",
+  "Childish Gambino",
+  "Coldplay",
+  "Duran Duran",
+  "Demi Lovato",
 ];
 
 const winResponses = [
@@ -298,9 +314,10 @@ const winResponses = [
 ];
 
 const loseResponses = [
-  "We can't win them all, can we?",
-  "Soy un perdador. I'm a loser baby...",
-  "I fought the law, and the law won!",
+  "You lost. We can't win them all, can we?",
+  "You lost. Soy un perdador. I'm a loser baby...",
+  "You lost. You fought the law, and the law won.",
+  "You lost. All you can do is shake it off, shake it off.",
 ];
 
 const attemptResponses = [
@@ -309,12 +326,13 @@ const attemptResponses = [
   "You don't got this.",
   "I am not confident in your abilities.",
   "Huh, you're kinda not good at this.",
-  "They say quitting is for losers. Maybe it's time to take stock of your current situation.",
   "I'm betting on you! And by that, I mean I'm betting you won't make it.",
   "This is hard.",
   "There's no way to connect these dots.",
   "WHOA! Livin'on a prayer with this one!",
-  "You got to know when to hold 'em, know when to fold 'em",
+  "You got to know when to hold 'em, know when to fold 'em...",
+  "You still haven't found What you're looking for...",
+  "nope",
 ];
 
 export {

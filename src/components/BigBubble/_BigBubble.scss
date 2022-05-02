@@ -1,19 +1,25 @@
 .big-bub-container {
+  // border: 1px solid red;
   display: flex;
   flex-direction: column;
-  height: 58vh;
+  height: 22em;
+  width: 20em;
   justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 2em;
 }
 
 .bubble-wrap {
   // margin-top: 4em;
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  h2 {
-    align-self: center;
-    color: white;
-  }
+  // width: fit-content;
+}
+
+.big-bub-name {
+  align-self: center;
+  color: white;
 }
 
 .big-bubs {

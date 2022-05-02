@@ -4,7 +4,7 @@ import { DataContext } from "../../contexts/DataContext";
 import { Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
-import defaultThumbnail from "../../images/default-thumb.jpg"
+import defaultThumbnail from "../../images/default-thumb.jpg";
 
 const BigBubble = () => {
   const data = useContext(DataContext);
@@ -22,10 +22,10 @@ const BigBubble = () => {
   }, [mainItem.Name]);
 
   return (
-    <Link to={`/artists/${mainItem.Name}`}>
-      <div className="big-bub-container">
-        {image && (
-          <div className="bubble-wrap scale-in-center">
+    <div className="big-bub-container">
+      {image && (
+        <div className="bubble-wrap scale-in-center">
+          <Link to={`/artists/${mainItem.Name}`}>
             <article
               className="big-bubs"
               onClick={() => {
@@ -33,15 +33,21 @@ const BigBubble = () => {
               }}
             >
               {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-              !image ? <img className="image" src={defaultThumbnail} /> : (
-                <img className="image" src={image} />
+              !image ? (
+                <img
+                  className="image"
+                  src={defaultThumbnail}
+                  alt={mainItem.Name}
+                />
+              ) : (
+                <img className="image" src={image} alt={mainItem.Name} />
               )}
             </article>
-            <h2>{data && <p className="big-bub-name">{mainItem.Name}</p>}</h2>
-          </div>
-        )}
-      </div>
-    </Link>
+          </Link>
+          {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+        </div>
+      )}
+    </div>
   );
 };
 

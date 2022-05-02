@@ -41,7 +41,7 @@ const GameBox = () => {
           <h2>Moves Left: {gameInfo.turnCounter}</h2>
         </div>
       )}
-      <h2>{gameInfo.gameMessage}</h2>
+      {gameInfo.gameIsActive && <h2 className="game-msg" >{gameInfo.gameMessage}</h2>}
     </div>
   );
 };
