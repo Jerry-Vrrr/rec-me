@@ -30,7 +30,7 @@ Our featured stretch technology for this project incorporated the React Context 
 - ![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
 ## Deployment
-This site is deployed on Heroku and cab be found [here](https://rec-me.surge.sh/)!
+This site is deployed on Surge and can be found [here](https://rec-me.surge.sh/)!
 Alternatively, this repo can be cloned to your local machine. run `npm i` before running `npm start`.
 
 ## Features
