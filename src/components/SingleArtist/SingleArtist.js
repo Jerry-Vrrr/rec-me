@@ -47,7 +47,7 @@ const SingleArtist = ({ name }) => {
               className="back-to-main"
               onClick={() => data.setQuery(mainItem.Name)}
             >
-              <span class="text">Back to Main</span>
+              <span className="text">Back to Main</span>
             </button>
           </Link>
         </div>
