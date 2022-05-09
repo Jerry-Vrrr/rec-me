@@ -44,7 +44,9 @@ const BigBubble = () => {
               )}
             </article>
           </Link>
-          {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          <Link to={`/artists/${mainItem.Name}`}>
+            {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          </Link>
         </div>
       )}
     </div>
