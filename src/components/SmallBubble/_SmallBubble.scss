@@ -6,14 +6,13 @@
   border-style: double;
   border-width: 0.5pc;
   border-color: grey;
-  align-self: center;
   height: 6em;
   width: 6em;
   cursor: pointer;
-  color: white;
   align-items: flex-end;
   justify-content: center;
   flex-wrap: wrap;
+  line-height: 1;
   .image {
     filter: brightness(85%);
     width: 100%;
