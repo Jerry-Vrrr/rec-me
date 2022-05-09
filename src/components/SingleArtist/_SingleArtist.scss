@@ -67,9 +67,14 @@ label {
 }
 
 .wiki-link {
-  margin-top: 1rem;
-  border-style: groove;
-  border-width: 0.5px;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.5em;
+  border: 2px solid rgba(197, 140, 238, 0.74);
+}
+
+.wiki-link:hover {
+  background-color: rgb(176 0 94 / 41%);
 }
 
 .back-to-main {

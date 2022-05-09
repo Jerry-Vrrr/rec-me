@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.related-item:hover {
+  background-color: rgb(176 0 94 / 41%);
+}
+
 .related-blorb {
   margin-left: 1rem;
 }

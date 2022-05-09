@@ -1,5 +1,4 @@
 .big-bub-container {
-  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   height: 22em;
@@ -11,10 +10,9 @@
 }
 
 .bubble-wrap {
-  // margin-top: 4em;
   display: flex;
   flex-direction: column;
-  // width: fit-content;
+  align-items: center;
 }
 
 .big-bub-name {
