@@ -65,7 +65,7 @@ const BubbleBox = () => {
             <>
               <BigBubble setQuery={data.setQuery} />
               <button
-                className="dice-button"
+                className="dice-button" aria-label="randomize artists"
                 onClick={() => {
                   data.setQuery(getRandom(initialItems));
                 }}
