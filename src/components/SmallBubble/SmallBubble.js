@@ -28,6 +28,7 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
       {image && (
         <div
           className="little-bubs scale-in-center"
+          tabIndex={0}
           id={item.id}
           onClick={() => smallBubbleHandler()}
         >
