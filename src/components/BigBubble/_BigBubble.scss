@@ -1,5 +1,4 @@
 .big-bub-container {
-  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   height: 22em;
@@ -11,10 +10,9 @@
 }
 
 .bubble-wrap {
-  // margin-top: 4em;
   display: flex;
   flex-direction: column;
-  // width: fit-content;
+  align-items: center;
 }
 
 .big-bub-name {
@@ -33,14 +31,15 @@
   height: 18em;
   width: 18em;
   position: relative;
-  .image {
-    filter: brightness(85%);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    clip-path: circle(50%);
-    object-fit: cover;
-  }
+}
+
+.big-bubs-image {
+  filter: brightness(85%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  clip-path: circle(50%);
+  object-fit: cover;
 }
 
 .scale-in-center {

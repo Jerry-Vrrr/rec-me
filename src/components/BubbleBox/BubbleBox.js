@@ -60,12 +60,12 @@ const BubbleBox = () => {
         <GameBox />
       </section>
       {!data.isLoading ? (
-        <React.Fragment>
+        <>
           {data && relatedItems.length ? (
             <>
               <BigBubble setQuery={data.setQuery} />
               <button
-                className="dice-button"
+                className="dice-button" aria-label="randomize artists"
                 onClick={() => {
                   data.setQuery(getRandom(initialItems));
                 }}
@@ -76,7 +76,7 @@ const BubbleBox = () => {
             <h2 className="search-error">No artist found! Please try again!</h2>
           )}
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
-        </React.Fragment>
+        </>
       ) : (
         <Loader />
       )}

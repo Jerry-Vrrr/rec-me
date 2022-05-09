@@ -6,6 +6,6 @@ describe('Search artist flow', () => {
     .get('.search-bar').type('Beyonce')
     .get('.button-search').click()
     cy.wait(5000)
-    .get('.image').should('have.attr', 'src').should('include', 'https://photos.bandsintown.com/thumb/8652941.jpeg')
+    .get('.big-bubs-image').should('have.attr', 'src').should('include', 'https://photos.bandsintown.com/thumb/8652941.jpeg')
   });
 })

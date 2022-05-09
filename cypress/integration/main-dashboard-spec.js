@@ -52,7 +52,7 @@ describe('Main page flow', () => {
         cy.visit('http://localhost:3000/')
         cy.wait(5000)
         .get('.big-bubs').find('img').should('be.visible')
-        .get('.bubble-wrap').find('p').should('be.visible')
+        .get('.bubble-wrap').find('h2').should('be.visible')
         .get('.little-bubs').get('#bubble5').find('h4').should('be.visible')
     });
 

@@ -35,16 +35,18 @@ const BigBubble = () => {
               {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
               !image ? (
                 <img
-                  className="image"
+                  className="big-bubs-image"
                   src={defaultThumbnail}
                   alt={mainItem.Name}
                 />
               ) : (
-                <img className="image" src={image} alt={mainItem.Name} />
+                <img className="big-bubs-image" src={image} alt={mainItem.Name} />
               )}
             </article>
           </Link>
-          {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          <Link to={`/artists/${mainItem.Name}`}>
+            {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          </Link>
         </div>
       )}
     </div>
