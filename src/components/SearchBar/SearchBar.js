@@ -28,7 +28,7 @@ const SearchBar = () => {
         onChange={(event) => handleChange(event)}
       />
       <button className="button-search">
-        <span class="text">Find Artist</span>
+        <span className="text">Find Artist</span>
       </button>
     </form>
   );
