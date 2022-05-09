@@ -31,12 +31,11 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
           id={item.id}
           onClick={() => smallBubbleHandler()}
         >
-          {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-          !image ? (
+          {!image ? (
             <img
               className="image"
               src={defaultThumbnail}
-              alt="no artist default thumbnail"
+              alt="no artist-default thumbnail"
             />
           ) : (
             <img className="image" src={image} alt={item.Name} />
