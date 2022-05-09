@@ -28,11 +28,11 @@ const GameBox = () => {
       className={`game-display ${gameInfo.gameIsActive ? "dark fade-in" : ""}`}
     >
       <button className="button-64" onClick={() => startGame()}>
-        <span class="text">{gameButton()}</span>
+        <span className="text">{gameButton()}</span>
       </button>
 
       {gameInfo.gameOver && (<button className="button-64" id='restart-button' onClick={() => restartGame()}> 
-        <span class="text">New Game</span>
+        <span className="text">New Game</span>
       </button> )}
 
       {gameInfo.gameIsActive && !gameInfo.gameOver && (
