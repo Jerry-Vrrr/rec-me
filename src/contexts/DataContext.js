@@ -1,7 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import { fetchData } from "../apiCalls";
 import Error from "../components/Error/Error";
-import Header from "../components/Header/Header";
 
 const DataContext = createContext();
 const DataContextProvider = ({ children }) => {
@@ -30,9 +29,9 @@ const DataContextProvider = ({ children }) => {
     <DataContext.Provider value={{ data, setQuery, isLoading, error }}>
       {data && children}
       {!data && error ? (
-        <React.Fragment>
+        <>
           <Error />
-        </React.Fragment>
+        </>
       ) : null}
     </DataContext.Provider>
   );
