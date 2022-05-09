@@ -60,7 +60,7 @@ const BubbleBox = () => {
         <GameBox />
       </section>
       {!data.isLoading ? (
-        <React.Fragment>
+        <>
           {data && relatedItems.length ? (
             <>
               <BigBubble setQuery={data.setQuery} />
@@ -76,7 +76,7 @@ const BubbleBox = () => {
             <h2 className="search-error">No artist found! Please try again!</h2>
           )}
           <div className="baby-bubble-wrap">{data && createBubbles()}</div>
-        </React.Fragment>
+        </>
       ) : (
         <Loader />
       )}
