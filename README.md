@@ -74,16 +74,15 @@ to reach in 6 moves or less. Users are told how many turns are left and given mo
 </details>
 </br>
 
-### Testing
+### Testing & Accessibility
 
-Rec-Me is fully end-to-end tested with Cypress. URLs are tested and network requests are stubbed.
+Rec-Me is fully end-to-end tested with Cypress. URLs are tested and network requests are stubbed. Rec-Me was also designed to be accessible for screen-readers and is fully tab-able.
 
 ## Future Additions
 - Incorporate a favorites mechanism so user's can favorite artists and save them to a list
 - Create customized user playlists
 - Search and filter by genre
 - Improve site accessibility
-- Add a randomizer feature to allow user's to re-shuffle the current artist without reloading the page
 
 ## Credits
 Authors: [Maddie Law](https://github.com/maddielaw) [Eric Matlock](https://github.com/ermatlock) [Jerry Vohrer](https://github.com/Jerry-Vrrr) [Katie Ammon](https://github.com/kammon10)
