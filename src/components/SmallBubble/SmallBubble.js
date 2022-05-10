@@ -38,7 +38,7 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
               alt="no artist-default thumbnail"
             />
           ) : (
-            <img className="image" src={image} alt={item.Name} />
+            <img className="image" src={image} alt={`thumbnail-${item.Name}`}/>
           )}
           <h4 className="sm-name">{item.Name}</h4>
         </div>
