@@ -80,7 +80,7 @@ describe('Main page flow', () => {
 
  
     it("should display error message to user when encountering 422 error", () => {
-        cy.intercept("http://fe-cors-proxy.herokuapp.com", {
+        cy.intercept('GET', "http://fe-cors-proxy.herokuapp.com", {
           statusCode: 422,
         }).as("422 error");
         cy.visit("http://localhost:3000/")
@@ -89,7 +89,7 @@ describe('Main page flow', () => {
 
       
     it("should display error message to user when encountering 500 error", () => {
-        cy.intercept("http://fe-cors-proxy.herokuapp.com", {
+        cy.intercept('GET', "http://fe-cors-proxy.herokuapp.com", {
             statusCode: 500,
         }).as("500 error");
         cy.visit("http://localhost:3000/")

@@ -30,7 +30,7 @@ const BubbleBox = () => {
     if (gameInfo.turnCounter > 1 && artistName !== gameInfo.goalArtist) {
       return gameInfo.setGameMessage(getRandom(attemptResponses));
     }
-    if (gameInfo.turnCounter === 1) {
+    if (gameInfo.turnCounter === 1 && artistName !== gameInfo.goalArtist) {
       gameInfo.setGameMessage(getRandom(loseResponses));
       gameInfo.setGameOver(true);
     }
@@ -54,34 +54,62 @@ const BubbleBox = () => {
     });
   };
 
-  return (
+  if (!data.isLoading && !data.data.mainItem.Name && data.data.mainItem.Type === 'unknown') {
+    return (
+      <div className="bubble-box">
+        <section className="banner">
+          <GameBox />
+        </section>
+        <Loader />
+      </div>
+      )
+  } else if (!data.isLoading && data.data.mainItem.Name && data.data.mainItem.Type === 'unknown') {
+    return (
+      <>
+        <div className="bubble-box">
+          <section className="banner">
+            <GameBox />
+          </section>
+          <h2 className="search-error">No artist found! Please try again!</h2>
+          <button className="dice-button" aria-label="randomize artists" onClick={() => {data.setQuery(getRandom(initialItems));}}></button>
+        </div>
+      </>
+    )
+  } else if (!data.isLoading && data.data.mainItem.Name && data.data.mainItem.Type === 'music' && !relatedItems.length) {
+    return (
+      <>
+        <div className="bubble-box">
+          <section className="banner">
+            <GameBox />
+          </section>
+          <h2 className="search-error">No artist found! Please try again!</h2>
+          <button className="dice-button" aria-label="randomize artists" onClick={() => {data.setQuery(getRandom(initialItems));}}></button>
+        </div>
+      </>
+    )
+  } else if (!data.isLoading && data.data.mainItem.Name && data.data.mainItem.Type === 'music' && relatedItems.length) {
+    return (
+      <>
+        <div className="bubble-box">
+          <section className="banner">
+            <GameBox />
+          </section>
+          <BigBubble setQuery={data.setQuery} />
+          <button className="dice-button" aria-label="randomize artists" onClick={() => {data.setQuery(getRandom(initialItems))}}></button>
+          <div className="baby-bubble-wrap">{data && createBubbles()}</div>
+        </div>
+      </>
+    )
+  } else {
+    return (
     <div className="bubble-box">
       <section className="banner">
         <GameBox />
       </section>
-      {!data.isLoading ? (
-        <>
-          {data && relatedItems.length ? (
-            <>
-              <BigBubble setQuery={data.setQuery} />
-              <button
-                className="dice-button" aria-label="randomize artists"
-                onClick={() => {
-                  data.setQuery(getRandom(initialItems));
-                }}
-              ></button>
-            </>
-          ) : null}
-          {!relatedItems.length && !data && (
-            <h2 className="search-error">No artist found! Please try again!</h2>
-          )}
-          <div className="baby-bubble-wrap">{data && createBubbles()}</div>
-        </>
-      ) : (
-        <Loader />
-      )}
+      <Loader />
     </div>
-  );
+    )
+  }
 };
 
 export default BubbleBox;
