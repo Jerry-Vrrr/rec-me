@@ -7,6 +7,8 @@
 
 Rec-Me is a music discovery app and game aimed at people who are sick of listening to the same music every day!
 
+Rec-Me won first place in Turing's Demo Competition in May of 2022! See our fun 90's infomercial style presentation and walkthrough [here](https://youtu.be/LJAvswcowI8)
+
 On page load, the user can view a collection of related artists with a featured artist in the center of the page -- clicking on a related artist  will move that artist to the center featured artist position and update the related artists around them. Clicking on the featured artist will route the user to that artist's details page and will include a bio, music video and list of related artists. 
 
 Users can use the search bar in the header to find an artist by name and discover new artists!
