@@ -42,7 +42,6 @@ const BigBubble = () => {
           {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
         </Link>
       </div>
-      )}
     </div>
 
     // Temporarily offline until bandsintown enabled
