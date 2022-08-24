@@ -1,7 +1,7 @@
 export const fetchData = async (query) => {
   return fetch("https://fe-cors-proxy.herokuapp.com", {
     headers: {
-      "Target-URL": `https://tastedive.com/api/similar?k=435194-ConcertT-B82P7E7L&info=1&q=${query}`,
+      "Target-URL": `https://tastedive.com/api/similar?k=435245-RecMe-OC5H7B67&info=1&q=${query}`,
     },
   }).then((response) => {
     if (!response.ok) {
