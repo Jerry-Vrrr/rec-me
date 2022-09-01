@@ -24,43 +24,26 @@ const SmallBubble = ({ item, setQuery, didIWin }) => {
 
   return (
     <>
-      <div
-        className="little-bubs scale-in-center"
-        tabIndex={0}
-        id={item.id}
-        onClick={() => smallBubbleHandler()}
-      >
-        <img
-          className="image"
-          src={defaultThumbnail}
-          alt="no artist-default thumbnail"
-        />
-
-        <h4 className="sm-name">{item.Name}</h4>
-      </div>
-    </>
-    // temporarily offline until bandsintown fixed
-    // {/* <>
-    //   {image && (
-    //     <div
-    //       className="little-bubs scale-in-center"
-    //       tabIndex={0}
-    //       id={item.id}
-    //       onClick={() => smallBubbleHandler()}
-    //     >
-    //       {/* {!image ? ( */}
-    //         <img
-    //           className="image"
-    //           src={defaultThumbnail}
-    //           alt="no artist-default thumbnail"
-    //         />
-    //       {/* ) : (
-    //         <img className="image" src={image} alt={`thumbnail-${item.Name}`}/>
-    //       )} */}
-    //       <h4 className="sm-name">{item.Name}</h4>
-    //     </div>
-    //   )}
-    // </> */}
+      {image && (
+        <div
+          className="little-bubs scale-in-center"
+          tabIndex={0}
+          id={item.id}
+          onClick={() => smallBubbleHandler()}
+        >
+          {!image ? (
+            <img
+              className="image"
+              src={defaultThumbnail}
+              alt="no artist-default thumbnail"
+            />
+          ) : (
+            <img className="image" src={image} alt={`thumbnail-${item.Name}`}/>
+          )}
+          <h4 className="sm-name">{item.Name}</h4>
+        </div>
+      )}
+    </> 
   );
 };
 

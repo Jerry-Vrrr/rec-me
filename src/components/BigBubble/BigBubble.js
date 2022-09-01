@@ -10,69 +10,46 @@ const BigBubble = () => {
   const data = useContext(DataContext);
   const mainItem = data.data.mainItem;
 
-  // const [image, setImage] = useState(null);
-  // useEffect(() => {
-  //   fetchImages(mainItem.Name)
-  //     .then((imageInfo) => {
-  //       setImage(imageInfo.thumb_url);
-  //     })
-  //     .catch((err) => {
-  //       <Error error={err.message} />;
-  //     });
-  // }, [mainItem.Name]);
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    fetchImages(mainItem.Name)
+      .then((imageInfo) => {
+        setImage(imageInfo.thumb_url);
+      })
+      .catch((err) => {
+        <Error error={err.message} />;
+      });
+  }, [mainItem.Name]);
 
   return (
     <div className="big-bub-container">
-      <div className="bubble-wrap scale-in-center">
-        <Link to={`/artists/${mainItem.Name}`}>
-          <article
-            className="big-bubs"
-            onClick={() => {
-              data && data.setQuery(mainItem.Name);
-            }}
-          >
-            <img
-              className="big-bubs-image"
-              src={defaultThumbnail}
-              alt={mainItem.Name}
-            />
-          </article>
-        </Link>
-        <Link to={`/artists/${mainItem.Name}`}>
-          {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
-        </Link>
-      </div>
+      {image && (
+        <div className="bubble-wrap scale-in-center">
+          <Link to={`/artists/${mainItem.Name}`}>
+            <article
+              className="big-bubs"
+              onClick={() => {
+                data && data.setQuery(mainItem.Name);
+              }}
+            >
+              {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
+              !image ? (
+                <img
+                  className="big-bubs-image"
+                  src={defaultThumbnail}
+                  alt={mainItem.Name}
+                />
+              ) : (
+                <img className="big-bubs-image" src={image} alt={mainItem.Name} />
+              )}
+            </article>
+          </Link>
+          <Link to={`/artists/${mainItem.Name}`}>
+            {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          </Link>
+        </div>
+      )}
     </div>
-
-    // Temporarily offline until bandsintown enabled
-    // <div className="big-bub-container">
-    //   {image && (
-    //     <div className="bubble-wrap scale-in-center">
-    //       <Link to={`/artists/${mainItem.Name}`}>
-    //         <article
-    //           className="big-bubs"
-    //           onClick={() => {
-    //             data && data.setQuery(mainItem.Name);
-    //           }}
-    //         >
-    //           {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-    //           !image ? (
-    //             <img
-    //               className="big-bubs-image"
-    //               src={defaultThumbnail}
-    //               alt={mainItem.Name}
-    //             />
-    //           ) : (
-    //             <img className="big-bubs-image" src={image} alt={mainItem.Name} />
-    //           )}
-    //         </article>
-    //       </Link>
-    //       <Link to={`/artists/${mainItem.Name}`}>
-    //         {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
-    //       </Link>
-    //     </div>
-    //   )}
-    // </div>
   );
 };
 
