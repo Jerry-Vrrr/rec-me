@@ -15,7 +15,7 @@ export const fetchData = async (query) => {
 export const fetchImages = async (name) => {
   return fetch("https://fe-cors-proxy.herokuapp.com", {
     headers: {
-      "Target-URL": `https://rest.bandsintown.com/artists/${name}/?app_id=24f4cd79b09e9f1532c301e21546d946`,
+      "Target-URL": `https://rest.bandsintown.com/artists/${name}/?app_id=ab610b25dbd67b7388b4f4ae6803f7d6`,
     },
   }).then((response) => {
     if (!response.ok) {
