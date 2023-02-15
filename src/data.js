@@ -1,4 +1,4 @@
-const initialItems = [
+const initialArtists = [
   "Olivia Rodrigo",
   "Doja Cat",
   "Billie Eilish",
@@ -336,7 +336,7 @@ const attemptResponses = [
 ];
 
 export {
-  initialItems,
+  initialArtists,
   gameArtists,
   attemptResponses,
   winResponses,

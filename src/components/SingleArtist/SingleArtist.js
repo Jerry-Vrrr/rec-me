@@ -1,41 +1,58 @@
 import "./_SingleArtist.scss";
 import { DataContext } from "../../contexts/DataContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import RelatedArtist from "../RelatedArtist/RelatedArtist";
 import { Link, useHistory } from "react-router-dom";
+import { fetchYouTube } from "../../apiCalls";
 
 const SingleArtist = ({ name }) => {
   const data = useContext(DataContext);
-  const mainItem = data.data.mainItem;
-  const relatedItems = data.data.relatedItems;
+  const mainArtist = data.mainArtist;
+  const relatedArtists = data.relatedArtists;
   const history = useHistory();
+  const [youtube, setYoutube] = useState("");
 
   const createSimilarList = () => {
-    return relatedItems.map((item, index) => {
-      item.id = `blerb${(index += 1)}`;
-      return (
-        <Link to={`/artists/${item.Name}`}>
-          <RelatedArtist
-            name={item.Name}
-            id={item.id}
-            key={(index += 1)}
-            setQuery={data.setQuery}
-          />
-        </Link>
-      );
-    });
+    return relatedArtists.length ? (
+      relatedArtists.map((item, index) => {
+        item.id = `blerb${(index += 1)}`;
+        return (
+          <Link to={`/artists/${item.name}`}>
+            <RelatedArtist
+              name={item.name}
+              id={item.id}
+              key={(index += 1)}
+              setSearchQuery={data.setSearchQuery}
+            />
+          </Link>
+        );
+      })
+    ) : (
+        <RelatedArtist
+          name="No Artists Listed"
+          id="no-artist"
+          key="no-artist"
+        />
+    );
   };
 
   useEffect(() => {
     history.listen((location) => {
       const path = location.pathname;
-      data.setQuery(path.substring(9));
+      data.setSearchQuery(path.substring(9));
     });
   }, [history]);
 
   useEffect(() => {
-    data.setQuery(name);
-  }, []);
+    data.setSearchQuery(data.mainArtist.name);
+    fetchYouTube(name)
+      .then((info) => {
+        setYoutube(info.items[0].id.videoId);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [data.mainArtist.name]);
 
   return (
     <section className="single-artist-page">
@@ -45,7 +62,7 @@ const SingleArtist = ({ name }) => {
           <Link to="/" style={{ textDecoration: "none" }}>
             <button
               className="back-to-main"
-              onClick={() => data.setQuery(mainItem.Name)}
+              onClick={() => data.setSearchQuery(mainArtist.name)}
             >
               <span className="text">Back to Main</span>
             </button>
@@ -57,7 +74,7 @@ const SingleArtist = ({ name }) => {
           <iframe
             width="100%"
             height="100%"
-            src={`https://www.youtube.com/embed/${mainItem.yID}`}
+            src={`https://www.youtube.com/embed/${youtube}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -71,24 +88,24 @@ const SingleArtist = ({ name }) => {
         </div>
       </div>
       <div className="article-box">
-        {!mainItem.wTeaser ? (
+        {!mainArtist.bio.summary ? (
           <article className="article">
             No info to display for this artist.
           </article>
         ) : (
-          <article className="article">{mainItem.wTeaser}</article>
+          <article className="article">{mainArtist.bio.summary}</article>
         )}
       </div>
       <>
-        {mainItem.wTeaser && (
+        {mainArtist.bio.summary && (
           <a
             className="wiki-link"
-            href={mainItem.wUrl}
+            href={mainArtist.bio.links.link.href}
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none" }}
           >
-            Read More About {mainItem.Name} HERE on Wikipedia!
+            Read More About {mainArtist.name} HERE on Last.FM!
           </a>
         )}
       </>

@@ -5,47 +5,56 @@ import { Link } from "react-router-dom";
 import { fetchImages } from "../../apiCalls";
 import Error from "../Error/Error";
 import defaultThumbnail from "../../images/default-thumb.jpg";
+import { truncateString } from "../../utils";
 
 const BigBubble = () => {
   const data = useContext(DataContext);
-  const mainItem = data.data.mainItem;
+  const mainArtist = data.mainArtist;
 
   const [image, setImage] = useState(null);
   useEffect(() => {
-    fetchImages(mainItem.Name)
+    fetchImages(mainArtist.name)
       .then((imageInfo) => {
         setImage(imageInfo.thumb_url);
       })
       .catch((err) => {
         <Error error={err.message} />;
       });
-  }, [mainItem.Name]);
+  }, [mainArtist.name]);
 
   return (
     <div className="big-bub-container">
-      {image && (
+      {mainArtist && (
         <div className="bubble-wrap scale-in-center">
-          <Link to={`/artists/${mainItem.Name}`}>
+          <Link to={`/artists/${mainArtist.name}`}>
             <article
               className="big-bubs"
               onClick={() => {
-                data && data.setQuery(mainItem.Name);
+                data && data.setSearchQuery(mainArtist.name);
               }}
             >
-              {image === "https://photos.bandsintown.com/artistThumb.jpg" ||
-              !image ? (
+              {!image ? (
                 <img
                   className="big-bubs-image"
                   src={defaultThumbnail}
-                  alt={mainItem.Name}
+                  alt={mainArtist.name}
+                  style={{ zIndex: -1 }}
                 />
               ) : (
-                <img className="big-bubs-image" src={image} alt={mainItem.Name} />
+                <img
+                  className="big-bubs-image"
+                  src={image}
+                  alt={mainArtist.name}
+                />
               )}
             </article>
           </Link>
-          <Link to={`/artists/${mainItem.Name}`}>
-            {data && <h2 className="big-bub-name">{mainItem.Name}</h2>}
+          <Link to={`/artists/${mainArtist.name}`}>
+            {data && (
+              <h2 className="big-bub-name">
+                {truncateString(mainArtist.name)}
+              </h2>
+            )}
           </Link>
         </div>
       )}

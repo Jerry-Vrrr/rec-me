@@ -12,7 +12,7 @@ const SearchBar = () => {
 
   const searchArtists = (event) => {
     event.preventDefault();
-    data.setQuery(artistName);
+    data.setSearchQuery(artistName);
     setArtistName("");
   };
 

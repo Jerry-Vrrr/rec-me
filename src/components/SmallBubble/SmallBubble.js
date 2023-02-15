@@ -4,46 +4,57 @@ import { fetchImages } from "../../apiCalls";
 import { GameContext } from "../../contexts/GameContext";
 import defaultThumbnail from "../../images/default-thumb.jpg";
 
-const SmallBubble = ({ item, setQuery, didIWin }) => {
-  const [image, setImage] = useState(null);
+const SmallBubble = ({ item, setSearchQuery, didIWin }) => {
+  const [image, setImage] = useState("");
   const gameInfo = useContext(GameContext);
 
   const smallBubbleHandler = () => {
-    setQuery(item.Name);
-    didIWin(item.Name);
+    setSearchQuery(item.name);
+    didIWin(item.name);
     return gameInfo.gameIsActive
       ? gameInfo.setTurnCounter((prevCounter) => (prevCounter -= 1))
       : null;
   };
 
   useEffect(() => {
-    fetchImages(item.Name).then((imageInfo) => {
+    fetchImages(item.name).then((imageInfo) => {
       setImage(imageInfo.thumb_url);
     });
-  }, [item.Name]);
+  }, [item.name]);
 
   return (
     <>
-      {image && (
+      {image && item ? (
         <div
           className="little-bubs scale-in-center"
           tabIndex={0}
           id={item.id}
           onClick={() => smallBubbleHandler()}
         >
-          {!image ? (
-            <img
-              className="image"
-              src={defaultThumbnail}
-              alt="no artist-default thumbnail"
-            />
-          ) : (
-            <img className="image" src={image} alt={`thumbnail-${item.Name}`}/>
-          )}
-          <h4 className="sm-name">{item.Name}</h4>
+          <img className="image" style={{zIndex: 1}} src={image} alt={`thumbnail-${item.name}`} />
+          <img
+            className="image"
+            src={defaultThumbnail}
+            alt="no artist-default thumbnail"
+          />
+          <h5 className="sm-name" style={{zIndex: 1}}>{item.name}</h5>
+        </div>
+      ) : (
+        <div
+          className="little-bubs scale-in-center"
+          tabIndex={0}
+          id={item.id}
+          onClick={() => smallBubbleHandler()}
+        >
+          <img
+            className="image"
+            src={defaultThumbnail}
+            alt="no artist-default thumbnail"
+          />
+          <h5 className="sm-name">{item.name}</h5>
         </div>
       )}
-    </> 
+    </>
   );
 };
 
